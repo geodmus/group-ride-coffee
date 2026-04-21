@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rides — Group Ride Coffee</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--terra:#E8603C;--espr:#2C1A0E;--cream:#FDF6EE;--sage:#6BAA7D;--sand:#F2E8DA;--stone:#9C8E82;--white:#FFFFFF;--mist:#EAE0D5;--r:48px;--sht:0 8px 32px rgba(232,96,60,.26);--shs:0 8px 28px rgba(107,170,125,.22);--sh:0 6px 28px rgba(44,26,14,.09)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--espr);font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%;object-fit:cover}
+
+.ticker{background:var(--espr);overflow:hidden;padding:9px 0;white-space:nowrap}
+.ticker-inner{display:inline-flex;animation:tick 30s linear infinite;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sand)}
+.ticker-inner span{padding:0 28px}
+.ticker-inner em{color:var(--terra);font-style:normal}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+nav{background:var(--white);border-bottom:1.5px solid var(--mist);height:68px;padding:0 44px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:99;box-shadow:0 2px 16px rgba(44,26,14,.06)}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--terra),#C0391A);display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:var(--sht);animation:bob 4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.logo-text{font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:.05em;color:var(--espr)}
+.logo-text span{color:var(--terra)}
+.nav-links{display:flex;gap:2px}
+.nav-links a{font-size:13px;font-weight:600;color:var(--stone);padding:7px 15px;border-radius:24px;transition:.16s}
+.nav-links a:hover,.nav-links a.active{background:var(--sand);color:var(--espr)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.nav-tel{font-size:13px;font-weight:700;color:var(--stone);padding:7px 12px;border-radius:24px;transition:.16s}
+.nav-tel:hover{background:var(--sand);color:var(--espr)}
+.btn-nav{background:linear-gradient(135deg,var(--terra),#C0391A);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:13px;padding:9px 22px;border-radius:var(--r);border:none;cursor:pointer;box-shadow:var(--sht);transition:.18s}
+.btn-nav:hover{transform:translateY(-2px);filter:brightness(1.06)}
+
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:14px;padding:13px 28px;border-radius:var(--r);border:none;cursor:pointer;transition:.18s;white-space:nowrap;text-decoration:none;letter-spacing:.01em}
+.btn:hover{transform:translateY(-2px)}
+.btn-terra{background:linear-gradient(135deg,var(--terra),#C0391A);color:var(--white);box-shadow:var(--sht)}
+.btn-terra:hover{filter:brightness(1.06)}
+.btn-sage{background:linear-gradient(135deg,var(--sage),#4A8C5C);color:var(--white);box-shadow:var(--shs)}
+.btn-sage:hover{filter:brightness(1.06)}
+.btn-white{background:var(--white);color:var(--espr);border:1.5px solid var(--mist);box-shadow:var(--sh)}
+.btn-ghost-light{background:rgba(255,255,255,.15);color:var(--white);border:1.5px solid rgba(255,255,255,.28);backdrop-filter:blur(8px)}
+.btn-ghost-light:hover{background:rgba(255,255,255,.25)}
+.btn-sm{padding:9px 18px;font-size:13px}
+.btn-lg{padding:16px 36px;font-size:16px}
+
+.wave{width:100%;overflow:hidden;line-height:0;margin-top:-2px}
+.wave svg{display:block;width:100%}
+.wave-cream svg{fill:var(--cream)}
+.wave-white svg{fill:var(--white)}
+.wave-sand svg{fill:var(--sand)}
+.wave-espr svg{fill:var(--espr)}
+
+/* PAGE HERO */
+.page-hero{position:relative;height:60vh;min-height:400px;overflow:hidden;display:flex;align-items:flex-end}
+.page-hero iframe{position:absolute;inset:0;width:100%;height:100%;border:none;pointer-events:none;transform:scale(1.08)}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(44,26,14,.82) 0%,rgba(44,26,14,.25) 55%,transparent 100%)}
+.page-hero-content{position:relative;z-index:2;padding:52px 48px;max-width:680px}
+.page-hero-content h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(64px,9vw,108px);color:var(--white);line-height:.88;letter-spacing:.02em;margin-bottom:14px}
+.page-hero-content h1 span{color:var(--terra)}
+.page-hero-content p{font-size:16px;color:rgba(255,255,255,.7);font-weight:500;margin-bottom:24px}
+
+.sec{padding:72px 44px}
+.sec-cream{background:var(--cream)}
+.sec-white{background:var(--white)}
+.sec-sand{background:var(--sand)}
+.sec-espr{background:var(--espr)}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:8px}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,62px);letter-spacing:.02em;color:var(--espr);margin-bottom:6px;line-height:1}
+.sec-title .t{color:var(--terra)}
+.sec-title .s{color:var(--sage)}
+.sec-title.on-dark{color:var(--cream)}
+.sec-sub{font-size:15px;color:var(--stone);line-height:1.65;max-width:500px;margin-bottom:40px}
+.sec-head{margin-bottom:44px}
+
+/* SCHEDULE */
+.schedule{background:var(--white);border-radius:28px;overflow:hidden;box-shadow:var(--sh);border:1.5px solid var(--mist)}
+.sched-head{display:grid;grid-template-columns:110px 1fr 100px 110px 120px;background:var(--espr);padding:14px 28px;gap:0}
+.sched-head div{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(253,246,238,.4)}
+.sched-row{display:grid;grid-template-columns:110px 1fr 100px 110px 120px;padding:17px 28px;border-bottom:1.5px solid var(--mist);align-items:center;transition:.15s;gap:0}
+.sched-row:last-child{border-bottom:none}
+.sched-row:hover{background:var(--sand)}
+.sched-day{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.04em;color:var(--terra)}
+.sched-name{font-weight:700;font-size:14px;color:var(--espr)}
+.sched-time{font-size:13px;font-weight:600;color:var(--stone)}
+.sched-dist{font-size:13px;font-weight:600;color:var(--stone)}
+.level{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:20px}
+.lv-all{background:rgba(107,170,125,.14);color:#3A7A50}
+.lv-int{background:rgba(232,96,60,.1);color:var(--terra)}
+.lv-adv{background:rgba(44,26,14,.08);color:var(--espr)}
+
+/* RIDE CARDS */
+.ride-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.ride-card{background:var(--white);border:1.5px solid var(--mist);border-radius:28px;overflow:hidden;transition:.22s}
+.ride-card:hover{transform:translateY(-5px);box-shadow:0 18px 52px rgba(44,26,14,.12)}
+.ride-card-media{aspect-ratio:16/9;overflow:hidden;background:var(--mist)}
+.ride-card-media iframe{width:100%;aspect-ratio:16/9;display:block;border:none}
+.ride-card-media img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.ride-card:hover .ride-card-media img{transform:scale(1.05)}
+.ride-card-body{padding:24px}
+.ride-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:10px}
+.rt-terra{background:rgba(232,96,60,.1);color:var(--terra)}
+.rt-sage{background:rgba(107,170,125,.12);color:#3A7A50}
+.ride-name{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:.02em;color:var(--espr);margin-bottom:8px}
+.ride-meta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.ride-meta-item{font-size:12px;font-weight:600;color:var(--stone);display:flex;align-items:center;gap:5px}
+.ride-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px;background:var(--sand);border-radius:18px;padding:14px}
+.rs-val{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--espr);letter-spacing:.02em;text-align:center}
+.rs-label{font-size:10px;font-weight:700;color:var(--stone);text-transform:uppercase;letter-spacing:.06em;text-align:center}
+
+/* VIDEO TRIO */
+.vid-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.vid-mini{border-radius:22px;overflow:hidden;background:var(--espr);box-shadow:var(--sh);transition:.2s}
+.vid-mini:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(44,26,14,.14)}
+.vid-mini iframe{width:100%;aspect-ratio:16/9;display:block;border:none}
+.vid-mini-foot{padding:11px 14px;background:var(--white)}
+.vid-mini-title{font-weight:700;font-size:13px;color:var(--espr)}
+.vid-mini-sub{font-size:11px;color:var(--stone);margin-top:2px}
+
+/* PHOTO STRIP */
+.photo-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+.photo-item{border-radius:20px;overflow:hidden;aspect-ratio:3/4;background:var(--mist)}
+.photo-item img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.photo-item:hover img{transform:scale(1.04)}
+
+/* CTA */
+.cta-band{background:var(--espr);padding:80px 44px;text-align:center;position:relative;overflow:hidden}
+.cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(232,96,60,.12),transparent 70%);pointer-events:none}
+.cta-h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,8vw,100px);color:var(--cream);line-height:.88;letter-spacing:.02em;margin-bottom:12px;position:relative;z-index:1}
+.cta-h2 span{color:var(--terra)}
+.cta-sub{font-size:16px;color:rgba(253,246,238,.45);margin-bottom:34px;font-weight:500;position:relative;z-index:1}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+
+footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-mark{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--terra),#C0391A);display:flex;align-items:center;justify-content:center;font-size:14px}
+.footer-logo{display:flex;align-items:center;gap:10px}
+.footer-name{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--cream);letter-spacing:.05em}
+.footer-name span{color:var(--terra)}
+.footer-info{font-size:12px;color:rgba(253,246,238,.3);text-align:right;line-height:1.9}
+.footer-info a{color:var(--terra)}
+
+@media(max-width:960px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .sec{padding:48px 20px}
+  .page-hero-content{padding:36px 22px}
+  .ride-grid,.vid-trio,.photo-strip,.sched-head,.sched-row{grid-template-columns:1fr}
+  .sched-head{display:none}
+  footer{padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>🚴 Sunday Group Ride · 7AM · All Levels</span><em>·</em>
+    <span>🏃 Monday Run Club · 6:30AM</span><em>·</em>
+    <span>☕ Coffee at the finish · Every ride</span><em>·</em>
+    <span>📍 10548 S Western Ave Ste 2R · Chicago</span><em>·</em>
+    <span>📞 (224) 490-6981</span><em>·</em>
+    <span>🚴 Sunday Group Ride · 7AM · All Levels</span><em>·</em>
+    <span>🏃 Monday Run Club · 6:30AM</span><em>·</em>
+    <span>☕ Coffee at the finish · Every ride</span><em>·</em>
+    <span>📍 10548 S Western Ave Ste 2R · Chicago</span><em>·</em>
+    <span>📞 (224) 490-6981</span><em>·</em>
+  </div>
+</div>
+
+<nav>
+  <a href="group_ride_final.html" class="logo">
+    <div class="logo-mark">☕</div>
+    <div class="logo-text">Group <span>Ride</span> Coffee</div>
+  </a>
+  <div class="nav-links">
+    <a href="group_ride_final.html">Home</a>
+    <a href="rides_final.html" class="active">Rides</a>
+    <a href="services_final.html">Services</a>
+    <a href="menu_final.html">Coffee</a>
+  </div>
+  <div class="nav-right">
+    <a href="tel:2244906981" class="nav-tel">📞 (224) 490-6981</a>
+    <button class="btn-nav">Register Now</button>
+  </div>
+</nav>
+
+<!-- HERO VIDEO -->
+<div class="page-hero">
+  <iframe src="https://www.youtube.com/embed/yhNSMpj2Za8?autoplay=1&mute=1&loop=1&playlist=yhNSMpj2Za8&controls=0&rel=0&modestbranding=1&playsinline=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <h1>GROUP<br><span>RIDES</span></h1>
+    <p>All levels welcome. Every ride ends with coffee.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <button class="btn btn-terra btn-lg">🚴 Join Sunday Ride</button>
+      <button class="btn btn-ghost-light">📅 Full Schedule ↓</button>
+    </div>
+  </div>
+</div>
+
+<div class="wave wave-white"><svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,25 C360,50 1080,0 1440,30 L1440,50 L0,50 Z"/></svg></div>
+
+<!-- SCHEDULE -->
+<div class="sec sec-white">
+  <div class="sec-head">
+    <div class="sec-label">Weekly Schedule</div>
+    <div class="sec-title">Pick Your <span class="t">Ride</span></div>
+  </div>
+  <div class="schedule">
+    <div class="sched-head">
+      <div>Day</div><div>Ride</div><div>Time</div><div>Distance</div><div>Level</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-day">SUN</div>
+      <div class="sched-name">☀️ Community Group Ride</div>
+      <div class="sched-time">7:00 AM</div>
+      <div class="sched-dist">25–35 mi</div>
+      <div><span class="level lv-all">All Levels</span></div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-day">MON</div>
+      <div class="sched-name">🏃 Run Club</div>
+      <div class="sched-time">6:30 AM</div>
+      <div class="sched-dist">3–6 mi</div>
+      <div><span class="level lv-all">All Levels</span></div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-day">WED</div>
+      <div class="sched-name">🔥 Midweek Grind</div>
+      <div class="sched-time">6:00 AM</div>
+      <div class="sched-dist">18–22 mi</div>
+      <div><span class="level lv-int">Intermediate</span></div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-day">THU</div>
+      <div class="sched-name">🏃 Speed Work</div>
+      <div class="sched-time">6:00 AM</div>
+      <div class="sched-dist">4–5 mi</div>
+      <div><span class="level lv-int">Intermediate</span></div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-day">SAT</div>
+      <div class="sched-name">🌅 Dawn Patrol</div>
+      <div class="sched-time">5:30 AM</div>
+      <div class="sched-dist">40–50 mi</div>
+      <div><span class="level lv-adv">Advanced</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wave wave-cream"><svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,15 C480,45 960,5 1440,30 L1440,50 L0,50 Z"/></svg></div>
+
+<!-- RIDE SPOTLIGHT -->
+<div class="sec sec-cream">
+  <div class="sec-head">
+    <div class="sec-label">Featured Rides</div>
+    <div class="sec-title">Ride <span class="s">Spotlight</span></div>
+  </div>
+  <div class="ride-grid">
+    <div class="ride-card">
+      <div class="ride-card-media">
+        <iframe src="https://www.youtube.com/embed/7aqFIEQ5pSk?rel=0&modestbranding=1" title="Sunday Group Ride" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="ride-card-body">
+        <div class="ride-tag rt-terra">🚴 Cycling</div>
+        <div class="ride-name">Sunday Community Ride</div>
+        <div class="ride-meta">
+          <div class="ride-meta-item">📅 Every Sunday</div>
+          <div class="ride-meta-item">🕖 7:00 AM</div>
+          <div class="ride-meta-item">📍 10548 S Western</div>
+        </div>
+        <div class="ride-stats">
+          <div><div class="rs-val">30mi</div><div class="rs-label">Distance</div></div>
+          <div><div class="rs-val">All</div><div class="rs-label">Level</div></div>
+          <div><div class="rs-val">Free</div><div class="rs-label">Entry</div></div>
+        </div>
+        <button class="btn btn-terra" style="width:100%;justify-content:center">Join This Ride ↗</button>
+      </div>
+    </div>
+    <div class="ride-card">
+      <div class="ride-card-media">
+        <iframe src="https://www.youtube.com/embed/yhNSMpj2Za8?rel=0&modestbranding=1" title="Dawn Patrol" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="ride-card-body">
+        <div class="ride-tag rt-sage">🌅 Cycling</div>
+        <div class="ride-name">Dawn Patrol — Saturday</div>
+        <div class="ride-meta">
+          <div class="ride-meta-item">📅 Every Saturday</div>
+          <div class="ride-meta-item">🕔 5:30 AM</div>
+          <div class="ride-meta-item">📍 10548 S Western</div>
+        </div>
+        <div class="ride-stats">
+          <div><div class="rs-val">45mi</div><div class="rs-label">Distance</div></div>
+          <div><div class="rs-val">Adv</div><div class="rs-label">Level</div></div>
+          <div><div class="rs-val">Free</div><div class="rs-label">Entry</div></div>
+        </div>
+        <button class="btn btn-sage" style="width:100%;justify-content:center">Join This Ride ↗</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wave wave-white"><svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,30 C360,5 1080,50 1440,15 L1440,50 L0,50 Z"/></svg></div>
+
+<!-- VIDEO TRIO -->
+<div class="sec sec-white">
+  <div class="sec-head">
+    <div class="sec-label">Ride Footage</div>
+    <div class="sec-title">Watch the <span class="t">Energy</span></div>
+  </div>
+  <div class="vid-trio">
+    <div class="vid-mini">
+      <iframe src="https://www.youtube.com/embed/7aqFIEQ5pSk?rel=0&modestbranding=1" title="Group Ride" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="vid-mini-foot"><div class="vid-mini-title">🚴 Group Coffee Ride</div><div class="vid-mini-sub">Chicago South Side</div></div>
+    </div>
+    <div class="vid-mini">
+      <iframe src="https://www.youtube.com/embed/yhNSMpj2Za8?rel=0&modestbranding=1" title="Friends Riding" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="vid-mini-foot"><div class="vid-mini-title">☀️ Riding with Friends</div><div class="vid-mini-sub">Community vibes</div></div>
+    </div>
+    <div class="vid-mini">
+      <iframe src="https://www.youtube.com/embed/W6LF0DkRMIg?rel=0&modestbranding=1" title="Coffee After Ride" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="vid-mini-foot"><div class="vid-mini-title">☕ Coffee After the Ride</div><div class="vid-mini-sub">The reward · The ritual</div></div>
+    </div>
+  </div>
+
+  <!-- PHOTO STRIP -->
+  <div class="photo-strip">
+    <div class="photo-item"><img src="https://images.unsplash.com/photo-1534787238916-9ba6764efd4f?w=400&h=600&fit=crop&q=80" alt="Cyclists"></div>
+    <div class="photo-item"><img src="https://images.unsplash.com/photo-1609743522653-52354461eb27?w=400&h=600&fit=crop&q=80" alt="Group ride"></div>
+    <div class="photo-item"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=400&h=600&fit=crop&q=80" alt="Happy cyclists"></div>
+    <div class="photo-item"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=600&fit=crop&q=80" alt="Runners"></div>
+  </div>
+</div>
+
+<div class="wave wave-espr"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,40 C360,0 1080,60 1440,20 L1440,60 L0,60 Z"/></svg></div>
+
+<div class="cta-band">
+  <div class="cta-glow"></div>
+  <div class="cta-inner">
+    <div class="cta-h2">EVERY RIDE<br><span>ENDS WITH</span><br>COFFEE.</div>
+    <div class="cta-sub">10548 S Western Ave Ste 2R · Chicago, IL</div>
+    <div class="cta-btns">
+      <button class="btn btn-terra btn-lg" onclick="window.location='group_ride_final.html'">🏠 Back to Home</button>
+      <button class="btn btn-ghost-light btn-lg" onclick="window.location='menu_final.html'">☕ Shop Coffee</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a href="group_ride_final.html" class="footer-logo">
+    <div class="footer-mark">☕</div>
+    <div class="footer-name">Group <span>Ride</span> Coffee LLC</div>
+  </a>
+  <div class="footer-info">
+    10548 S Western Ave Ste 2R · Chicago, IL 60643<br>
+    <a href="tel:2244906981">(224) 490-6981</a> · Open until 7 PM
+  </div>
+</footer>
+</body>
+</html>

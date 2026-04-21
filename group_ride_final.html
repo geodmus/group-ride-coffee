@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Group Ride Coffee — Chicago</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+/* ══ PALETTE ════════════════════════════════
+   Terracotta  #E8603C  — energy, warmth, cycling
+   Espresso    #2C1A0E  — depth, coffee, anchor
+   Cream       #FDF6EE  — light, open, friendly
+   Sage        #6BAA7D  — go, fresh, community
+   Sand        #F2E8DA  — neutral warmth
+   Stone       #9C8E82  — subdued text
+══════════════════════════════════════════ */
+:root {
+  --terra:   #E8603C;
+  --espr:    #2C1A0E;
+  --cream:   #FDF6EE;
+  --sage:    #6BAA7D;
+  --sand:    #F2E8DA;
+  --stone:   #9C8E82;
+  --white:   #FFFFFF;
+  --mist:    #EAE0D5;
+  --r: 48px;
+  --sht: 0 8px 32px rgba(232,96,60,.26);
+  --shs: 0 8px 28px rgba(107,170,125,.22);
+  --sh:  0 6px 28px rgba(44,26,14,.09);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--cream);
+  color: var(--espr);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration:none; color:inherit; }
+img { display:block; width:100%; object-fit:cover; }
+
+/* ── TICKER ─────────────────────────────── */
+.ticker {
+  background: var(--espr);
+  overflow: hidden;
+  padding: 9px 0;
+  white-space: nowrap;
+}
+.ticker-inner {
+  display: inline-flex;
+  animation: tick 30s linear infinite;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--sand);
+}
+.ticker-inner span { padding: 0 28px; }
+.ticker-inner em { color: var(--terra); font-style:normal; }
+@keyframes tick { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+/* ── NAV ─────────────────────────────────── */
+nav {
+  background: var(--white);
+  border-bottom: 1.5px solid var(--mist);
+  height: 68px;
+  padding: 0 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  box-shadow: 0 2px 16px rgba(44,26,14,.06);
+}
+.logo { display:flex; align-items:center; gap:12px; }
+.logo-mark {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--terra), #C0391A);
+  display: flex; align-items:center; justify-content:center;
+  font-size: 18px;
+  box-shadow: var(--sht);
+  animation: bob 4s ease-in-out infinite;
+}
+@keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+.logo-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 21px;
+  letter-spacing: .05em;
+  color: var(--espr);
+}
+.logo-text span { color: var(--terra); }
+.nav-links { display:flex; gap:2px; }
+.nav-links a {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--stone);
+  padding: 7px 15px;
+  border-radius: 24px;
+  transition: .16s;
+}
+.nav-links a:hover { background: var(--sand); color: var(--espr); }
+.nav-links a.active { background: var(--sand); color: var(--espr); }
+.nav-right { display:flex; align-items:center; gap:10px; }
+.nav-tel {
+  font-size:13px; font-weight:700; color:var(--stone);
+  padding: 7px 12px; border-radius:24px; transition:.16s;
+}
+.nav-tel:hover { background:var(--sand); color:var(--espr); }
+
+/* ── BUTTONS ─────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 13px 28px;
+  border-radius: var(--r);
+  border: none;
+  cursor: pointer;
+  transition: .18s;
+  white-space: nowrap;
+  text-decoration: none;
+  letter-spacing: .01em;
+}
+.btn:hover { transform:translateY(-2px); }
+.btn-terra {
+  background: linear-gradient(135deg, var(--terra), #C0391A);
+  color: var(--white);
+  box-shadow: var(--sht);
+}
+.btn-terra:hover { filter:brightness(1.06); box-shadow:0 12px 36px rgba(232,96,60,.38); }
+.btn-sage {
+  background: linear-gradient(135deg, var(--sage), #4A8C5C);
+  color: var(--white);
+  box-shadow: var(--shs);
+}
+.btn-sage:hover { filter:brightness(1.06); box-shadow:0 12px 36px rgba(107,170,125,.35); }
+.btn-espr {
+  background: var(--espr);
+  color: var(--cream);
+  box-shadow: 0 8px 28px rgba(44,26,14,.22);
+}
+.btn-espr:hover { filter:brightness(1.2); }
+.btn-white {
+  background: var(--white);
+  color: var(--espr);
+  border: 1.5px solid var(--mist);
+  box-shadow: var(--sh);
+}
+.btn-white:hover { border-color: var(--stone); box-shadow: 0 10px 32px rgba(44,26,14,.13); }
+.btn-ghost-light {
+  background: rgba(255,255,255,.15);
+  color: var(--white);
+  border: 1.5px solid rgba(255,255,255,.28);
+  backdrop-filter: blur(8px);
+}
+.btn-ghost-light:hover { background:rgba(255,255,255,.25); }
+.btn-sm  { padding:9px 18px; font-size:13px; }
+.btn-lg  { padding:16px 36px; font-size:16px; }
+.btn-nav {
+  background: linear-gradient(135deg, var(--terra), #C0391A);
+  color: var(--white);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 9px 22px;
+  border-radius: var(--r);
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--sht);
+  transition: .18s;
+}
+.btn-nav:hover { transform:translateY(-2px); filter:brightness(1.06); }
+
+/* ── HERO ─────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 94vh;
+  min-height: 580px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.hero iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none;
+  transform: scale(1.08);
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(44,26,14,.80) 0%,
+    rgba(44,26,14,.35) 45%,
+    rgba(44,26,14,.10) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 56px 48px;
+  max-width: 720px;
+}
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.14);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: var(--r);
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.live-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--sage);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.55)} }
+.hero-h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(80px, 12vw, 144px);
+  line-height: .86;
+  letter-spacing: .02em;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.hero-h1 .t { color: var(--terra); }
+.hero-h1 .s { color: var(--sage); }
+.hero-sub {
+  font-size: 17px;
+  color: rgba(255,255,255,.7);
+  font-weight: 500;
+  margin-bottom: 30px;
+  max-width: 480px;
+  line-height: 1.65;
+}
+.hero-btns { display:flex; gap:12px; flex-wrap:wrap; }
+
+/* ── WAVE DIVIDER ─────────────────────────── */
+.wave {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin-top: -2px;
+}
+.wave svg { display:block; width:100%; }
+.wave-cream svg { fill: var(--cream); }
+.wave-white svg { fill: var(--white); }
+.wave-sand  svg { fill: var(--sand); }
+.wave-espr  svg { fill: var(--espr); }
+
+/* ── STATS STRIP ─────────────────────────── */
+.stats-strip {
+  background: var(--white);
+  padding: 24px 44px;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  flex-wrap: wrap;
+  border-bottom: 1.5px solid var(--mist);
+}
+.stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--sand);
+  border-radius: var(--r);
+  padding: 11px 20px;
+  white-space: nowrap;
+  border: 1.5px solid var(--mist);
+  transition: .18s;
+}
+.stat-pill:hover { transform:translateY(-2px); box-shadow:var(--sh); }
+.stat-icon { font-size: 18px; }
+.stat-val {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 19px;
+  letter-spacing: .03em;
+  color: var(--espr);
+  line-height: 1;
+}
+.stat-label { font-size: 11px; font-weight: 700; color: var(--stone); text-transform:uppercase; letter-spacing:.06em; }
+
+/* ── SECTION ─────────────────────────────── */
+.sec {
+  padding: 72px 44px;
+}
+.sec-cream { background: var(--cream); }
+.sec-white { background: var(--white); }
+.sec-sand  { background: var(--sand); }
+.sec-espr  { background: var(--espr); }
+.sec-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 8px;
+}
+.sec-label.on-dark { color: var(--sage); }
+.sec-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 5vw, 62px);
+  letter-spacing: .02em;
+  color: var(--espr);
+  margin-bottom: 6px;
+  line-height: 1;
+}
+.sec-title.on-dark { color: var(--cream); }
+.sec-title .t { color: var(--terra); }
+.sec-title .s { color: var(--sage); }
+.sec-sub {
+  font-size: 15px;
+  color: var(--stone);
+  line-height: 1.65;
+  max-width: 500px;
+  margin-bottom: 40px;
+}
+.sec-sub.on-dark { color: rgba(253,246,238,.5); }
+.sec-head { margin-bottom:44px; }
+
+/* ── VIDEO GRID ──────────────────────────── */
+.vid-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+.vid-card {
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--espr);
+  box-shadow: var(--sh);
+  transition: .22s;
+}
+.vid-card:hover { transform:translateY(-4px); box-shadow:0 18px 52px rgba(44,26,14,.14); }
+.vid-card iframe { width:100%; aspect-ratio:16/9; display:block; border:none; }
+.vid-stack { display:flex; flex-direction:column; gap:16px; }
+.vid-foot {
+  padding: 13px 16px;
+  background: var(--white);
+}
+.vid-foot-title { font-weight:700; font-size:14px; color:var(--espr); }
+.vid-foot-sub   { font-size:11px; color:var(--stone); margin-top:2px; }
+
+/* ── MOSAIC ──────────────────────────────── */
+.mosaic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 260px 260px;
+  gap: 12px;
+  margin-top: 40px;
+}
+.mos-item {
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--mist);
+  position: relative;
+}
+.mos-item img {
+  width:100%; height:100%;
+  object-fit:cover;
+  transition: .4s;
+}
+.mos-item:hover img { transform:scale(1.04); }
+.mos-item.span2 { grid-column:span 2; }
+.mos-item.tall  { grid-row:span 2; }
+.mos-cap {
+  position: absolute;
+  bottom: 0; left:0; right:0;
+  padding: 13px 16px;
+  background: linear-gradient(to top, rgba(44,26,14,.65), transparent);
+}
+.mos-cap-text { font-weight:700; font-size:13px; color:var(--white); }
+
+/* ── SERVICES ────────────────────────────── */
+.svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.svc-card {
+  background: var(--white);
+  border: 1.5px solid var(--mist);
+  border-radius: 28px;
+  overflow: hidden;
+  transition: .22s;
+}
+.svc-card:hover { transform:translateY(-5px); box-shadow:0 18px 52px rgba(44,26,14,.12); }
+.svc-img { aspect-ratio:4/3; overflow:hidden; background:var(--mist); }
+.svc-img img { width:100%; height:100%; object-fit:cover; transition:.4s; }
+.svc-card:hover .svc-img img { transform:scale(1.05); }
+.svc-body { padding: 22px 22px 26px; }
+.svc-tag {
+  display:inline-block;
+  font-size:10px; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase;
+  padding:4px 12px; border-radius:20px;
+  margin-bottom:9px;
+}
+.st-terra { background:rgba(232,96,60,.1); color:var(--terra); }
+.st-sage  { background:rgba(107,170,125,.12); color:#3A7A50; }
+.st-espr  { background:rgba(44,26,14,.08); color:var(--espr); }
+.svc-name {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:26px; letter-spacing:.02em;
+  color:var(--espr); margin-bottom:5px;
+}
+.svc-desc { font-size:13px; color:var(--stone); line-height:1.55; margin-bottom:14px; }
+.svc-price {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:34px; color:var(--espr); letter-spacing:.01em;
+}
+.svc-price span { font-family:'Plus Jakarta Sans',sans-serif; font-size:13px; color:var(--stone); font-weight:400; letter-spacing:0; margin-left:3px; }
+
+/* ── FLAGSHIP ────────────────────────────── */
+.flagship {
+  background: var(--espr);
+  border-radius: 32px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0 20px 64px rgba(44,26,14,.22);
+  position: relative;
+  margin-top: 18px;
+}
+.flagship::before {
+  content:'';
+  position:absolute; top:-80px; right:-80px;
+  width:360px; height:360px; border-radius:50%;
+  background:radial-gradient(circle,rgba(232,96,60,.18),transparent 70%);
+  pointer-events:none;
+}
+.fs-media { position:relative; min-height:420px; overflow:hidden; }
+.fs-media iframe,.fs-media img {
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover; border:none;
+}
+.fs-media-ov {
+  position:absolute; inset:0;
+  background:linear-gradient(to right,rgba(44,26,14,.5),transparent);
+}
+.fs-body {
+  padding: 48px 44px;
+  position:relative; z-index:1;
+  display:flex; flex-direction:column; justify-content:center;
+}
+.fs-badge {
+  display:inline-flex; align-items:center; gap:7px;
+  background:rgba(232,96,60,.18);
+  border:1px solid rgba(232,96,60,.3);
+  border-radius:20px; padding:5px 14px;
+  font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--terra); margin-bottom:16px;
+}
+.fs-title {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(48px,5vw,72px);
+  color:var(--cream); line-height:.9; letter-spacing:.02em;
+  margin-bottom:10px;
+}
+.fs-title span { color:var(--terra); }
+.fs-desc { font-size:15px; color:rgba(253,246,238,.5); line-height:1.6; margin-bottom:20px; }
+.fs-features {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:10px; margin-bottom:26px;
+}
+.fs-feat {
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px; padding:14px;
+  transition:.18s;
+}
+.fs-feat:hover { background:rgba(255,255,255,.09); }
+.fs-feat-icon { font-size:20px; margin-bottom:6px; }
+.fs-feat-title { font-weight:700; font-size:13px; color:var(--cream); }
+.fs-feat-sub { font-size:11px; color:rgba(253,246,238,.35); margin-top:2px; }
+.fs-price {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:68px; color:var(--terra);
+  letter-spacing:.01em; line-height:1; margin-bottom:4px;
+}
+.fs-price-sub { font-size:13px; color:rgba(253,246,238,.35); margin-bottom:22px; }
+
+/* ── COFFEE DROP ─────────────────────────── */
+.drop-grid { display:grid; grid-template-columns:1.1fr 1fr; gap:16px; align-items:start; }
+.drop-hero {
+  background:var(--espr);
+  border-radius:28px; overflow:hidden;
+  position:relative; min-height:440px;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  box-shadow:var(--sh);
+}
+.drop-hero-img {
+  position:absolute; inset:0;
+  width:100%; height:100%; object-fit:cover;
+  opacity:.35;
+}
+.drop-hero-glow {
+  position:absolute; top:-40px; right:-40px;
+  width:260px; height:260px; border-radius:50%;
+  background:radial-gradient(circle,rgba(232,96,60,.28),transparent 70%);
+  pointer-events:none;
+}
+.drop-content {
+  position:relative; z-index:2;
+  padding:32px;
+}
+.drop-label {
+  font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:rgba(253,246,238,.4);
+  display:flex; align-items:center; gap:7px; margin-bottom:8px;
+}
+.drop-timer {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:54px; color:var(--terra);
+  letter-spacing:.06em; line-height:1;
+  margin-bottom:12px;
+  text-shadow:0 0 24px rgba(232,96,60,.4);
+}
+.drop-name {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:52px; color:var(--cream);
+  line-height:.9; letter-spacing:.02em; margin-bottom:8px;
+}
+.drop-name span { color:var(--terra); }
+.drop-sub { font-size:13px; color:rgba(253,246,238,.45); margin-bottom:20px; }
+.drop-minis { display:flex; flex-direction:column; gap:14px; }
+.drop-mini {
+  background:var(--white);
+  border-radius:22px; overflow:hidden;
+  box-shadow:var(--sh); transition:.2s;
+}
+.drop-mini:hover { transform:translateY(-3px); }
+.drop-mini-img { aspect-ratio:16/7; overflow:hidden; background:var(--mist); }
+.drop-mini-img img { width:100%; height:100%; object-fit:cover; transition:.4s; }
+.drop-mini:hover .drop-mini-img img { transform:scale(1.05); }
+.drop-mini-body { padding:13px 16px; }
+.drop-mini-name { font-weight:700; font-size:15px; color:var(--espr); margin-bottom:2px; }
+.drop-mini-sub { font-size:12px; color:var(--stone); }
+
+/* ── LEADERBOARD ─────────────────────────── */
+.lb {
+  background:var(--white);
+  border-radius:28px; overflow:hidden;
+  box-shadow:var(--sh);
+  border:1.5px solid var(--mist);
+}
+.lb-row {
+  display:flex; align-items:center; gap:14px;
+  padding:15px 24px;
+  border-bottom:1.5px solid var(--mist);
+  transition:.15s;
+}
+.lb-row:last-child { border-bottom:none; }
+.lb-row:hover { background:var(--sand); }
+.lb-rank {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:22px; width:30px; text-align:center;
+  color:var(--mist); flex-shrink:0; letter-spacing:.03em;
+}
+.lb-rank.top { color:var(--terra); }
+.lb-av {
+  width:36px; height:36px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:800; font-size:13px; color:var(--white); flex-shrink:0;
+}
+.lb-info { flex:1; }
+.lb-name { font-weight:700; font-size:15px; color:var(--espr); }
+.lb-loc { font-size:11px; color:var(--stone); margin-top:1px; }
+.lb-miles {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:22px; color:var(--terra); letter-spacing:.03em;
+}
+.lb-unit { font-size:10px; color:var(--stone); text-transform:uppercase; letter-spacing:.08em; text-align:right; }
+.lb-medal { font-size:18px; }
+
+/* ── CTA BAND ────────────────────────────── */
+.cta-band {
+  background: var(--espr);
+  padding: 84px 44px;
+  text-align: center;
+  position:relative; overflow:hidden;
+}
+.cta-wave-top { position:absolute; top:0; left:0; right:0; line-height:0; }
+.cta-wave-top svg { fill:var(--sand); display:block; width:100%; }
+.cta-glow {
+  position:absolute; top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  width:600px; height:600px; border-radius:50%;
+  background:radial-gradient(circle,rgba(232,96,60,.12),transparent 70%);
+  pointer-events:none;
+}
+.cta-inner { position:relative; z-index:2; }
+.cta-h2 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(64px,9vw,112px);
+  color:var(--cream); line-height:.88; letter-spacing:.02em;
+  margin-bottom:14px;
+}
+.cta-h2 span { color:var(--terra); }
+.cta-sub { font-size:16px; color:rgba(253,246,238,.5); margin-bottom:36px; font-weight:500; }
+.cta-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+/* ── INFO BAND ───────────────────────────── */
+.info-band {
+  background:var(--white);
+  border-bottom:1.5px solid var(--mist);
+  display:grid; grid-template-columns:repeat(4,1fr);
+}
+.info-tile {
+  padding:26px 28px;
+  border-right:1.5px solid var(--mist);
+  display:flex; align-items:flex-start; gap:13px;
+  transition:.16s;
+}
+.info-tile:last-child { border-right:none; }
+.info-tile:hover { background:var(--sand); }
+.info-icon-wrap {
+  width:42px; height:42px; border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:19px; flex-shrink:0;
+}
+.i-terra { background:rgba(232,96,60,.1); }
+.i-sage  { background:rgba(107,170,125,.12); }
+.info-tile-label { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--stone); margin-bottom:3px; }
+.info-tile-val { font-weight:700; font-size:15px; color:var(--espr); margin-bottom:2px; }
+.info-tile-sub { font-size:12px; color:var(--stone); }
+.info-tile-sub a { color:var(--terra); }
+
+/* ── FOOTER ──────────────────────────────── */
+footer {
+  background: #1C0E06;
+  padding: 32px 44px;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:16px;
+}
+.footer-logo { display:flex; align-items:center; gap:10px; }
+.footer-mark {
+  width:30px; height:30px; border-radius:50%;
+  background:linear-gradient(135deg,var(--terra),#C0391A);
+  display:flex; align-items:center; justify-content:center; font-size:14px;
+}
+.footer-name {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:18px; color:var(--cream); letter-spacing:.05em;
+}
+.footer-name span { color:var(--terra); }
+.footer-info { font-size:12px; color:rgba(253,246,238,.3); text-align:right; line-height:1.9; }
+.footer-info a { color:var(--terra); }
+
+/* ── RESPONSIVE ──────────────────────────── */
+@media(max-width:960px){
+  nav { padding:0 20px; }
+  .nav-links { display:none; }
+  .sec { padding:48px 20px; }
+  .stats-strip,.info-band { padding:16px 20px; grid-template-columns:1fr 1fr; }
+  .vid-grid,.mosaic,.svc-grid,.drop-grid,.flagship,.fs-features { grid-template-columns:1fr; }
+  .mos-item.span2,.mos-item.tall { grid-column:auto; grid-row:auto; }
+  .mosaic { grid-template-rows:auto; }
+  .flagship { border-radius:24px; }
+  .fs-body { padding:28px 24px; }
+  .hero-content { padding:36px 22px; }
+  footer { padding:24px 20px; }
+  .cta-band { padding:64px 22px; }
+  .info-tile { padding:18px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>☀️ Open Now · Closes 7PM</span><em>·</em>
+    <span>📍 10548 S Western Ave Ste 2R · Chicago IL</span><em>·</em>
+    <span>📞 (224) 490-6981</span><em>·</em>
+    <span>🚴 Group Ride · Every Sunday · All Levels</span><em>·</em>
+    <span>☕ Friday Coffee Drop · 6AM</span><em>·</em>
+    <span>☀️ Open Now · Closes 7PM</span><em>·</em>
+    <span>📍 10548 S Western Ave Ste 2R · Chicago IL</span><em>·</em>
+    <span>📞 (224) 490-6981</span><em>·</em>
+    <span>🚴 Group Ride · Every Sunday · All Levels</span><em>·</em>
+    <span>☕ Friday Coffee Drop · 6AM</span><em>·</em>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <div class="logo-mark">☕</div>
+    <div class="logo-text">Group <span>Ride</span> Coffee</div>
+  </div>
+  <div class="nav-links">
+    <a href="#" class="active">Home</a>
+    <a href="rides_final.html">Rides</a>
+    <a href="services_final.html">Services</a>
+    <a href="menu_final.html">Coffee</a>
+  </div>
+  <div class="nav-right">
+    <a href="tel:2244906981" class="nav-tel">📞 (224) 490-6981</a>
+    <button class="btn-nav">Join a Ride ↗</button>
+  </div>
+</nav>
+
+<!-- HERO — real cycling + coffee community video -->
+<!-- Video: "Coffee ride with friends" lifestyle cycling footage -->
+<div class="hero">
+  <iframe
+    src="https://www.youtube.com/embed/7aqFIEQ5pSk?autoplay=1&mute=1&loop=1&playlist=7aqFIEQ5pSk&controls=0&rel=0&showinfo=0&modestbranding=1&playsinline=1"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+  ></iframe>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-pill"><div class="live-dot"></div> Chicago · South Side · Open Now</div>
+    <div class="hero-h1">
+      RIDE.<br>
+      <span class="t">BREW.</span><br>
+      <span class="s">BELONG.</span>
+    </div>
+    <div class="hero-sub">Cycling · Running · Coffee · Community</div>
+    <div class="hero-btns">
+      <button class="btn btn-terra btn-lg">🚴 Join a Ride</button>
+      <button class="btn btn-sage btn-lg">☕ Shop Coffee</button>
+      <button class="btn btn-ghost-light btn-lg">📍 Directions</button>
+    </div>
+  </div>
+</div>
+
+<!-- WAVE: espr → white -->
+<div class="wave wave-white">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z"/></svg>
+</div>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat-pill"><span class="stat-icon">📍</span><div><div class="stat-val">Chicago</div><div class="stat-label">South Side</div></div></div>
+  <div class="stat-pill"><span class="stat-icon">⭐</span><div><div class="stat-val">5.0</div><div class="stat-label">Google Rating</div></div></div>
+  <div class="stat-pill"><span class="stat-icon">🕖</span><div><div class="stat-val" style="color:var(--sage)">Open</div><div class="stat-label">Closes 7 PM</div></div></div>
+  <div class="stat-pill"><span class="stat-icon">🚴</span><div><div class="stat-val">847+</div><div class="stat-label">Riders This Week</div></div></div>
+  <div class="stat-pill"><span class="stat-icon">☕</span><div><div class="stat-val">Fri 6AM</div><div class="stat-label">Coffee Drop</div></div></div>
+</div>
+
+<!-- INFO TILES -->
+<div class="info-band">
+  <div class="info-tile">
+    <div class="info-icon-wrap i-terra">📍</div>
+    <div><div class="info-tile-label">Visit</div><div class="info-tile-val">10548 S Western Ave Ste 2R</div><div class="info-tile-sub">Chicago, IL 60643</div></div>
+  </div>
+  <div class="info-tile">
+    <div class="info-icon-wrap i-sage">🕖</div>
+    <div><div class="info-tile-label">Hours</div><div class="info-tile-val" style="color:var(--sage)">Open Now</div><div class="info-tile-sub">Closes 7 PM today</div></div>
+  </div>
+  <div class="info-tile">
+    <div class="info-icon-wrap i-terra">📞</div>
+    <div><div class="info-tile-label">Call</div><div class="info-tile-val">(224) 490-6981</div><div class="info-tile-sub"><a href="tel:2244906981">Tap to call →</a></div></div>
+  </div>
+  <div class="info-tile">
+    <div class="info-icon-wrap i-sage">⭐</div>
+    <div><div class="info-tile-label">Reviews</div><div class="info-tile-val">Be the First!</div><div class="info-tile-sub">Leave a Google review</div></div>
+  </div>
+</div>
+
+<!-- WAVE: white → cream -->
+<div class="wave wave-cream">
+  <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,20 C480,50 960,0 1440,25 L1440,50 L0,50 Z"/></svg>
+</div>
+
+<!-- VIDEOS -->
+<div class="sec sec-cream" id="rides">
+  <div class="sec-head">
+    <div class="sec-label">Feel the Energy</div>
+    <div class="sec-title">Life on <span class="t">Two Wheels</span></div>
+    <div class="sec-sub">Happy riders. Great coffee. Real community.</div>
+  </div>
+  <div class="vid-grid">
+    <!-- Cycling group ride with coffee culture -->
+    <div class="vid-card">
+      <iframe src="https://www.youtube.com/embed/7aqFIEQ5pSk?rel=0&modestbranding=1" title="Group Coffee Ride" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="vid-foot">
+        <div class="vid-foot-title">🚴 Group Coffee Ride — Friends on Two Wheels</div>
+        <div class="vid-foot-sub">Camaraderie on the road · Chicago South Side</div>
+      </div>
+    </div>
+    <div class="vid-stack">
+      <!-- Friends cycling together happy -->
+      <div class="vid-card">
+        <iframe src="https://www.youtube.com/embed/yhNSMpj2Za8?rel=0&modestbranding=1" title="Cycling Friends" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="vid-foot">
+          <div class="vid-foot-title">☀️ Riding with Friends</div>
+        </div>
+      </div>
+      <!-- Coffee after ride -->
+      <div class="vid-card">
+        <iframe src="https://www.youtube.com/embed/W6LF0DkRMIg?rel=0&modestbranding=1" title="Coffee After Ride" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="vid-foot">
+          <div class="vid-foot-title">☕ Coffee After the Ride</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WAVE: cream → white -->
+<div class="wave wave-white">
+  <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,25 C360,0 1080,50 1440,20 L1440,50 L0,50 Z"/></svg>
+</div>
+
+<!-- PHOTO MOSAIC -->
+<div class="sec sec-white" style="padding-top:12px">
+  <div class="mosaic">
+    <div class="mos-item tall">
+      <img src="https://images.unsplash.com/photo-1534787238916-9ba6764efd4f?w=600&h=900&fit=crop&q=80" alt="Cyclists riding together">
+      <div class="mos-cap"><div class="mos-cap-text">🚴 Group Rides</div></div>
+    </div>
+    <div class="mos-item">
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=380&fit=crop&q=80" alt="Coffee">
+      <div class="mos-cap"><div class="mos-cap-text">☕ Artisan Coffee</div></div>
+    </div>
+    <div class="mos-item">
+      <img src="https://images.unsplash.com/photo-1609743522653-52354461eb27?w=600&h=380&fit=crop&q=80" alt="Cyclists friends">
+      <div class="mos-cap"><div class="mos-cap-text">👥 Community</div></div>
+    </div>
+    <div class="mos-item span2">
+      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=900&h=380&fit=crop&q=80" alt="Happy cyclists">
+      <div class="mos-cap"><div class="mos-cap-text">🏃 Cyclists & Runners · Chicago South Side</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- WAVE: white → sand -->
+<div class="wave wave-sand">
+  <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,15 C480,45 960,5 1440,30 L1440,50 L0,50 Z"/></svg>
+</div>
+
+<!-- SERVICES -->
+<div class="sec sec-sand" id="services">
+  <div class="sec-head">
+    <div class="sec-label">Club Packages</div>
+    <div class="sec-title">Build Your <span class="s">Club</span></div>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div class="svc-img"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=600&h=450&fit=crop&q=80" alt="Event Kit"></div>
+      <div class="svc-body">
+        <div class="svc-tag st-sage">🎉 Event</div>
+        <div class="svc-name">Event-in-a-Box</div>
+        <div class="svc-desc">GPS route · photographer · espresso bar · recap reel.</div>
+        <div class="svc-price">$3,200 <span>/ event</span></div>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-img"><img src="https://images.unsplash.com/photo-1534787238916-9ba6764efd4f?w=600&h=450&fit=crop&q=80" alt="Recovery Lounge"></div>
+      <div class="svc-body">
+        <div class="svc-tag st-terra">💆 Recovery</div>
+        <div class="svc-name">Recovery Lounge</div>
+        <div class="svc-desc">Sauna · compression boots · Pro-Roast subscription.</div>
+        <div class="svc-price">$6,800 <span>/ bundle</span></div>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-img"><img src="https://images.unsplash.com/photo-1609743522653-52354461eb27?w=600&h=450&fit=crop&q=80" alt="Content Bundle"></div>
+      <div class="svc-body">
+        <div class="svc-tag st-espr">🎥 Creator</div>
+        <div class="svc-name">Content Bundle</div>
+        <div class="svc-desc">Gimbal · mic · 6-month coffee · ride scripts.</div>
+        <div class="svc-price">$2,400 <span>/ bundle</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLAGSHIP BASECAMP -->
+  <div class="flagship">
+    <div class="fs-media">
+      <iframe src="https://www.youtube.com/embed/7aqFIEQ5pSk?rel=0&modestbranding=1" title="Basecamp Package" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="fs-media-ov"></div>
+    </div>
+    <div class="fs-body">
+      <div class="fs-badge">🔥 Most Wanted</div>
+      <div class="fs-title">BASE<span>CAMP</span></div>
+      <div class="fs-desc">Plant your flag. Own the block. Complete club infrastructure — nothing else to buy.</div>
+      <div class="fs-features">
+        <div class="fs-feat"><div class="fs-feat-icon">⛺</div><div class="fs-feat-title">Branded Tent 20×20</div><div class="fs-feat-sub">Heavy-duty, event-ready</div></div>
+        <div class="fs-feat"><div class="fs-feat-icon">🍺</div><div class="fs-feat-title">Cold Brew Kegerator</div><div class="fs-feat-sub">Mobile setup</div></div>
+        <div class="fs-feat"><div class="fs-feat-icon">👕</div><div class="fs-feat-title">100+ Branded Tees</div><div class="fs-feat-sub">Co-branded technical</div></div>
+        <div class="fs-feat"><div class="fs-feat-icon">🛠️</div><div class="fs-feat-title">Full Setup Kit</div><div class="fs-feat-sub">Setup & breakdown</div></div>
+      </div>
+      <div class="fs-price">$8,999</div>
+      <div class="fs-price-sub">Complete bundle · Everything included</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn btn-terra btn-lg">Get Basecamp ↗</button>
+        <a href="tel:2244906981" class="btn btn-ghost-light btn-sm">📞 Call Us</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WAVE: sand → cream -->
+<div class="wave wave-cream">
+  <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,30 C480,5 960,45 1440,15 L1440,50 L0,50 Z"/></svg>
+</div>
+
+<!-- COFFEE DROPS -->
+<div class="sec sec-cream" id="coffee">
+  <div class="sec-head">
+    <div class="sec-label">Limited Release</div>
+    <div class="sec-title">Friday <span class="t">Coffee Drop</span></div>
+  </div>
+  <div class="drop-grid">
+    <div class="drop-hero">
+      <img class="drop-hero-img" src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&h=700&fit=crop&q=80" alt="Coffee">
+      <div class="drop-hero-glow"></div>
+      <div class="drop-content">
+        <div class="drop-label">
+          <span style="width:7px;height:7px;border-radius:50%;background:var(--terra);animation:pulse 1.2s ease-in-out infinite;display:inline-block"></span>
+          Until Next Drop
+        </div>
+        <div class="drop-timer" id="countdown-num">03:14:22</div>
+        <div class="drop-name">The 5AM<br><span>Roast</span></div>
+        <div class="drop-sub">Small-batch · 48 bags · Gone when they're gone.</div>
+        <button class="btn btn-terra">🔔 Get Notified</button>
+      </div>
+    </div>
+    <div class="drop-minis">
+      <div class="drop-mini">
+        <div class="drop-mini-img"><img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&h=240&fit=crop&q=80" alt="Espresso"></div>
+        <div class="drop-mini-body"><div class="drop-mini-name">Dark Threshold Espresso</div><div class="drop-mini-sub">Pre-ride fuel · Heavy body · Low acid</div></div>
+      </div>
+      <div class="drop-mini">
+        <div class="drop-mini-img"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&h=240&fit=crop&q=80" alt="Cold Brew"></div>
+        <div class="drop-mini-body"><div class="drop-mini-name">Club Edition Cold Brew</div><div class="drop-mini-sub">Co-branded · Limited per club</div></div>
+      </div>
+      <div class="drop-mini">
+        <div class="drop-mini-img"><img src="https://images.unsplash.com/photo-1490879483657-7fdb3f4ad7f3?w=600&h=240&fit=crop&q=80" alt="Ride Blend"></div>
+        <div class="drop-mini-body"><div class="drop-mini-name">Ride Day Blend</div><div class="drop-mini-sub">Smooth · Medium roast · All-day energy</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WAVE: cream → white -->
+<div class="wave wave-white">
+  <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,20 C360,50 1080,0 1440,30 L1440,50 L0,50 Z"/></svg>
+</div>
+
+<!-- LEADERBOARD -->
+<div class="sec sec-white" id="clubs">
+  <div class="sec-head">
+    <div class="sec-label">This Week</div>
+    <div class="sec-title">Club <span class="s">Leaderboard</span></div>
+  </div>
+  <div class="lb">
+    <div class="lb-row">
+      <div class="lb-rank top">01</div>
+      <div class="lb-av" style="background:linear-gradient(135deg,var(--terra),#C0391A)">CS</div>
+      <div class="lb-info"><div class="lb-name">Chicago South Side Riders 🚴</div><div class="lb-loc">Chicago, IL · Beverly / 106th loop</div></div>
+      <div style="text-align:right"><div class="lb-miles">4,280</div><div class="lb-unit">miles</div></div>
+      <div class="lb-medal">🥇</div>
+    </div>
+    <div class="lb-row">
+      <div class="lb-rank top">02</div>
+      <div class="lb-av" style="background:linear-gradient(135deg,var(--sage),#3A6B4A)">BK</div>
+      <div class="lb-info"><div class="lb-name">BK Cycling Collective 🚴</div><div class="lb-loc">Brooklyn, NY · 1,204 members</div></div>
+      <div style="text-align:right"><div class="lb-miles">3,910</div><div class="lb-unit">miles</div></div>
+      <div class="lb-medal">🥈</div>
+    </div>
+    <div class="lb-row">
+      <div class="lb-rank top">03</div>
+      <div class="lb-av" style="background:linear-gradient(135deg,#C8934A,#8B5E2A)">AT</div>
+      <div class="lb-info"><div class="lb-name">ATL Pedal Gang 🚴</div><div class="lb-loc">Atlanta, GA · 632 members</div></div>
+      <div style="text-align:right"><div class="lb-miles">3,440</div><div class="lb-unit">miles</div></div>
+      <div class="lb-medal">🥉</div>
+    </div>
+    <div class="lb-row">
+      <div class="lb-rank">04</div>
+      <div class="lb-av" style="background:linear-gradient(135deg,#888,#555)">MH</div>
+      <div class="lb-info"><div class="lb-name">Mile High Mob 🏃</div><div class="lb-loc">Denver, CO · 390 members</div></div>
+      <div style="text-align:right"><div class="lb-miles">2,870</div><div class="lb-unit">miles</div></div>
+      <div class="lb-medal"></div>
+    </div>
+    <div class="lb-row">
+      <div class="lb-rank">05</div>
+      <div class="lb-av" style="background:linear-gradient(135deg,#666,#333)">HW</div>
+      <div class="lb-info"><div class="lb-name">Harbor Wolves Cycling 🚴</div><div class="lb-loc">Seattle, WA · 515 members</div></div>
+      <div style="text-align:right"><div class="lb-miles">2,610</div><div class="lb-unit">miles</div></div>
+      <div class="lb-medal"></div>
+    </div>
+  </div>
+</div>
+
+<!-- WAVE into CTA (white → espr) -->
+<div class="wave wave-espr">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,40 C360,0 1080,60 1440,20 L1440,60 L0,60 Z"/></svg>
+</div>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-glow"></div>
+  <div class="cta-inner">
+    <div class="cta-h2">OWN YOUR<br><span>RIDE.</span></div>
+    <div class="cta-sub">Cycling · Running · Coffee · Chicago South Side</div>
+    <div class="cta-btns">
+      <button class="btn btn-terra btn-lg">🚴 Start Your Club</button>
+      <button class="btn btn-ghost-light btn-lg">📦 View All Packages</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <div class="footer-mark">☕</div>
+    <div class="footer-name">Group <span>Ride</span> Coffee LLC</div>
+  </div>
+  <div class="footer-info">
+    10548 S Western Ave Ste 2R · Chicago, IL 60643<br>
+    <a href="tel:2244906981">(224) 490-6981</a> · Open until 7 PM
+  </div>
+</footer>
+
+<script>
+var t=3*3600+14*60+22;
+setInterval(function(){
+  if(t<=0)t=6*3600; t--;
+  var h=String(Math.floor(t/3600)).padStart(2,'0');
+  var m=String(Math.floor((t%3600)/60)).padStart(2,'0');
+  var s=String(t%60).padStart(2,'0');
+  var el=document.getElementById('countdown-num');
+  if(el) el.textContent=h+':'+m+':'+s;
+},1000);
+</script>
+<style>@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.55)}}</style>
+</body>
+</html>
