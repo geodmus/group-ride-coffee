@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms & Conditions — Group Ride Coffee</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--terra:#E8603C;--espr:#2C1A0E;--cream:#FDF6EE;--sage:#6BAA7D;--sand:#F2E8DA;--stone:#9C8E82;--white:#FFFFFF;--mist:#EAE0D5;--r:48px;--sht:0 8px 32px rgba(232,96,60,.26);--sh:0 6px 28px rgba(44,26,14,.09)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--espr);font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+
+/* TICKER */
+.ticker{background:var(--espr);overflow:hidden;padding:9px 0;white-space:nowrap}
+.ticker-inner{display:inline-flex;animation:tick 30s linear infinite;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sand)}
+.ticker-inner span{padding:0 28px}
+.ticker-inner em{color:var(--terra);font-style:normal}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* NAV */
+nav{background:var(--white);border-bottom:1.5px solid var(--mist);height:68px;padding:0 44px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:99;box-shadow:0 2px 16px rgba(44,26,14,.06)}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--terra),#C0391A);display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:var(--sht)}
+.logo-text{font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:.05em;color:var(--espr)}
+.logo-text span{color:var(--terra)}
+.nav-links{display:flex;gap:2px}
+.nav-links a{font-size:13px;font-weight:600;color:var(--stone);padding:7px 15px;border-radius:24px;transition:.16s}
+.nav-links a:hover{background:var(--sand);color:var(--espr)}
+.nav-tel{font-size:13px;font-weight:700;color:var(--stone);padding:7px 12px;border-radius:24px}
+.btn-nav{background:linear-gradient(135deg,var(--terra),#C0391A);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:13px;padding:9px 22px;border-radius:var(--r);border:none;cursor:pointer;box-shadow:var(--sht)}
+
+/* HERO STRIP */
+.page-hero{background:var(--espr);padding:64px 44px 52px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(232,96,60,.15),transparent 70%);pointer-events:none}
+.page-hero-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:10px}
+.page-hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,7vw,88px);color:var(--cream);letter-spacing:.02em;line-height:.9;margin-bottom:14px}
+.page-hero-title span{color:var(--terra)}
+.page-hero-sub{font-size:14px;color:rgba(253,246,238,.5);font-weight:500}
+.page-hero-date{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:6px 16px;font-size:12px;font-weight:600;color:rgba(253,246,238,.5);margin-top:16px}
+
+/* WAVE */
+.wave{width:100%;overflow:hidden;line-height:0;margin-top:-2px}
+.wave svg{display:block;width:100%}
+.wave-white svg{fill:var(--white)}
+.wave-cream svg{fill:var(--cream)}
+.wave-sand svg{fill:var(--sand)}
+
+/* CONTENT */
+.content-wrap{max-width:800px;margin:0 auto;padding:64px 44px}
+.policy-section{margin-bottom:48px}
+.policy-section-num{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--terra);margin-bottom:6px}
+.policy-section-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.03em;color:var(--espr);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--mist)}
+.policy-section-title span{color:var(--terra)}
+.policy-text{font-size:15px;color:#4A3828;line-height:1.75;margin-bottom:12px}
+.policy-list{list-style:none;margin:14px 0 16px}
+.policy-list li{font-size:14px;color:#4A3828;padding:8px 0;border-bottom:1px solid var(--mist);display:flex;align-items:flex-start;gap:10px;line-height:1.6}
+.policy-list li::before{content:'→';color:var(--terra);font-weight:700;font-size:13px;margin-top:2px;flex-shrink:0}
+.policy-highlight{background:var(--sand);border-left:3px solid var(--terra);border-radius:0 12px 12px 0;padding:16px 20px;margin:16px 0;font-size:14px;color:var(--espr);line-height:1.65;font-weight:500}
+
+/* QUICK NAV */
+.quick-nav{background:var(--white);border:1.5px solid var(--mist);border-radius:24px;padding:24px 28px;margin-bottom:48px;box-shadow:var(--sh)}
+.quick-nav-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.05em;color:var(--espr);margin-bottom:14px}
+.quick-nav-links{display:flex;flex-wrap:wrap;gap:8px}
+.quick-nav-links a{font-size:12px;font-weight:700;color:var(--terra);background:rgba(232,96,60,.08);padding:6px 14px;border-radius:20px;transition:.15s;border:1px solid rgba(232,96,60,.15)}
+.quick-nav-links a:hover{background:var(--terra);color:var(--white)}
+
+/* POLICY CARDS */
+.policy-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:52px;padding-top:40px;border-top:1.5px solid var(--mist)}
+.policy-card{background:var(--white);border:1.5px solid var(--mist);border-radius:20px;padding:20px;text-align:center;transition:.18s;cursor:pointer}
+.policy-card:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(--terra)}
+.policy-card-icon{font-size:24px;margin-bottom:8px}
+.policy-card-title{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.03em;color:var(--espr);margin-bottom:4px}
+.policy-card-sub{font-size:11px;color:var(--stone)}
+
+/* FOOTER */
+footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:0}
+.footer-logo{display:flex;align-items:center;gap:10px}
+.footer-mark{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--terra),#C0391A);display:flex;align-items:center;justify-content:center;font-size:14px}
+.footer-name{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--cream);letter-spacing:.05em}
+.footer-name span{color:var(--terra)}
+.footer-info{font-size:12px;color:rgba(253,246,238,.3);text-align:right;line-height:1.9}
+.footer-info a{color:var(--terra)}
+
+/* HAMBURGER */
+.hamburger{display:none;flex-direction:column;justify-content:space-around;width:32px;height:32px;background:transparent;border:none;cursor:pointer;padding:0}
+.hamburger span{width:100%;height:3px;background:var(--espr);border-radius:3px;transition:all .2s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{position:fixed;top:68px;left:0;right:0;background:var(--white);padding:20px;display:none;flex-direction:column;gap:4px;box-shadow:0 10px 30px rgba(0,0,0,.1);z-index:100;border-bottom:1.5px solid var(--mist)}
+.mobile-menu.active{display:flex}
+.mobile-menu a{font-size:16px;font-weight:600;color:var(--espr);padding:12px 16px;border-radius:16px;transition:.16s}
+.mobile-menu a:hover{background:var(--sand)}
+
+@media(max-width:960px){
+  nav{padding:0 20px}
+  .nav-links,.nav-tel,.btn-nav{display:none}
+  .hamburger{display:flex}
+  .content-wrap{padding:44px 20px}
+  .page-hero{padding:44px 20px 36px}
+  .policy-cards{grid-template-columns:repeat(2,1fr)}
+  footer{padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>☀️ Open Now · Closes 7PM</span><em>·</em>
+    <span>📍 10548 S Western Ave Ste 2R · Chicago IL</span><em>·</em>
+    <span>📞 (224) 490-6981</span><em>·</em>
+    <span>🚴 Group Ride · Every Sunday · All Levels</span><em>·</em>
+    <span>☕ Friday Coffee Drop · 6AM</span><em>·</em>
+    <span>☀️ Open Now · Closes 7PM</span><em>·</em>
+    <span>📍 10548 S Western Ave Ste 2R · Chicago IL</span><em>·</em>
+    <span>📞 (224) 490-6981</span><em>·</em>
+    <span>🚴 Group Ride · Every Sunday · All Levels</span><em>·</em>
+    <span>☕ Friday Coffee Drop · 6AM</span><em>·</em>
+  </div>
+</div>
+
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-mark">☕</div>
+    <div class="logo-text">Group <span>Ride</span> Coffee</div>
+  </a>
+  <button class="hamburger" id="hamburgerBtn"><span></span><span></span><span></span></button>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="rides_final.html">Rides</a>
+    <a href="services_final.html">Services</a>
+    <a href="menu_final.html">Coffee</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a href="tel:2244906981" class="nav-tel">📞 (224) 490-6981</a>
+    <button class="btn-nav">Join a Ride ↗</button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">🏠 Home</a>
+  <a href="rides_final.html">🚴 Rides</a>
+  <a href="services_final.html">📦 Services</a>
+  <a href="menu_final.html">☕ Coffee</a>
+  <a href="tel:2244906981">📞 (224) 490-6981</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-label">Legal</div>
+  <div class="page-hero-title">Refund <span>Policy</span></div>
+  <div class="page-hero-sub">Our commitment to your satisfaction — returns, refunds &amp; cancellations.</div>
+  <div class="page-hero-date">📅 Last updated: April 2025</div>
+</div>
+
+<div class="wave wave-white"><svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,25 C360,50 1080,0 1440,25 L1440,50 L0,50 Z"/></svg></div>
+
+<div class="content-wrap">
+  <div class="quick-nav">
+    <div class="quick-nav-title">Jump to Section</div>
+    <div class="quick-nav-links">
+      <a href="#coffee-returns">Coffee Returns</a>
+      <a href="#bundle-returns">Bundle Returns</a>
+      <a href="#subscriptions">Subscriptions</a>
+      <a href="#events">Events</a>
+      <a href="#process">Refund Process</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <div class="policy-highlight">
+    We stand behind everything we make. If something isn't right, contact us within the applicable window and we'll make it right. Our goal is always your satisfaction.
+  </div>
+
+  <div class="policy-section" id="coffee-returns">
+    <div class="policy-section-num">01</div>
+    <div class="policy-section-title">Coffee &amp; <span>Beverage Returns</span></div>
+    <p class="policy-text">Due to the perishable nature of specialty coffee, we have a limited return window. Here's our policy:</p>
+    <ul class="policy-list">
+      <li>Unopened bags may be returned within 7 days of delivery for a full refund</li>
+      <li>If your coffee arrives damaged, stale, or incorrect — contact us within 48 hours for a full replacement or refund</li>
+      <li>We cannot accept returns on opened coffee bags unless there is a quality defect</li>
+      <li>Photo documentation of damaged or incorrect items may be required</li>
+    </ul>
+    <div class="policy-highlight">If your coffee doesn't taste right, we want to know. Call us at (224) 490-6981 — we'll always work with you to make it right.</div>
+  </div>
+
+  <div class="policy-section" id="bundle-returns">
+    <div class="policy-section-num">02</div>
+    <div class="policy-section-title">Bundle Package <span>Returns</span></div>
+    <p class="policy-text">Club infrastructure packages (Basecamp, Recovery Lounge, Event-in-a-Box, Content Bundle) have the following return policy:</p>
+    <ul class="policy-list">
+      <li>Cancellations before fulfillment begins: full refund within 5 business days</li>
+      <li>Cancellations after fulfillment begins but before delivery: 50% refund</li>
+      <li>Returns after delivery: items must be unused and in original packaging — 30% restocking fee applies</li>
+      <li>Custom branded items (tees, co-branded bags) are non-refundable once produced</li>
+      <li>Defective or damaged items are replaced at no cost within 14 days of delivery</li>
+    </ul>
+  </div>
+
+  <div class="policy-section" id="subscriptions">
+    <div class="policy-section-num">03</div>
+    <div class="policy-section-title">Subscription <span>Cancellations</span></div>
+    <p class="policy-text">Pro-Roast Monthly subscriptions can be cancelled at any time with the following terms:</p>
+    <ul class="policy-list">
+      <li>Cancel before your next billing date to avoid being charged for the following month</li>
+      <li>Cancellations must be made at least 5 days before your billing date to take effect</li>
+      <li>No refunds are issued for subscription charges already processed</li>
+      <li>To cancel, call (224) 490-6981 or visit us in person</li>
+    </ul>
+  </div>
+
+  <div class="policy-section" id="events">
+    <div class="policy-section-num">04</div>
+    <div class="policy-section-title">Event <span>Cancellations</span></div>
+    <p class="policy-text">For paid group rides and community events:</p>
+    <ul class="policy-list">
+      <li>Cancellations 7+ days before the event: full refund</li>
+      <li>Cancellations 3–6 days before the event: 50% refund or full credit toward a future event</li>
+      <li>Cancellations within 48 hours: no refund, but credit toward future events may be issued at our discretion</li>
+      <li>If we cancel an event due to weather or safety concerns, you will receive a full refund or reschedule option</li>
+    </ul>
+  </div>
+
+  <div class="policy-section" id="process">
+    <div class="policy-section-num">05</div>
+    <div class="policy-section-title">Refund <span>Process</span></div>
+    <p class="policy-text">Approved refunds are processed as follows:</p>
+    <ul class="policy-list">
+      <li>Refunds are returned to the original payment method</li>
+      <li>Processing time: 3–7 business days after approval</li>
+      <li>You will receive a confirmation when your refund is processed</li>
+      <li>Shipping costs are non-refundable unless the return is due to our error</li>
+    </ul>
+  </div>
+
+  <div class="policy-section" id="contact">
+    <div class="policy-section-num">06</div>
+    <div class="policy-section-title">Contact <span>Us</span></div>
+    <p class="policy-text">To initiate a return or refund, contact us directly:</p>
+    <ul class="policy-list">
+      <li>📍 10548 S Western Ave Ste 2R, Chicago, IL 60643</li>
+      <li>📞 (224) 490-6981</li>
+      <li>🕖 Open daily · Closes 7 PM</li>
+    </ul>
+  </div>
+
+  <div class="policy-cards">
+    <a href="terms.html" class="policy-card"><div class="policy-card-icon">📋</div><div class="policy-card-title">Terms &amp; Conditions</div><div class="policy-card-sub">Usage terms</div></a>
+    <a href="privacy.html" class="policy-card"><div class="policy-card-icon">🔒</div><div class="policy-card-title">Privacy Policy</div><div class="policy-card-sub">Your data</div></a>
+    <a href="delivery.html" class="policy-card"><div class="policy-card-icon">📦</div><div class="policy-card-title">Delivery Policy</div><div class="policy-card-sub">Shipping &amp; timeframes</div></a>
+    <a href="index.html" class="policy-card"><div class="policy-card-icon">🏠</div><div class="policy-card-title">Back Home</div><div class="policy-card-sub">Return to main site</div></a>
+  </div>
+</div>
+
+<footer>
+  <a href="index.html" class="footer-logo">
+    <div class="footer-mark">☕</div>
+    <div class="footer-name">Group <span>Ride</span> Coffee LLC</div>
+  </a>
+  <div class="footer-info">
+    10548 S Western Ave Ste 2R · Chicago, IL 60643<br>
+    <a href="tel:2244906981">(224) 490-6981</a> · Open until 7 PM
+  </div>
+</footer>
+
+<script>
+var btn=document.getElementById('hamburgerBtn'),menu=document.getElementById('mobileMenu');
+if(btn&&menu){btn.addEventListener('click',function(){menu.classList.toggle('active');this.classList.toggle('open')});menu.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){menu.classList.remove('active');btn.classList.remove('open')})})}
+</script>
+</body>
+</html>
