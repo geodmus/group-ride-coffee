@@ -133,13 +133,6 @@ nav{background:var(--white);border-bottom:1.5px solid var(--mist);height:68px;pa
 .cta-sub{font-size:16px;color:rgba(253,246,238,.45);margin-bottom:34px;font-weight:500;position:relative;z-index:1}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
 
-footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-.footer-mark{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--terra),#C0391A);display:flex;align-items:center;justify-content:center;font-size:14px}
-.footer-logo{display:flex;align-items:center;gap:10px}
-.footer-name{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--cream);letter-spacing:.05em}
-.footer-name span{color:var(--terra)}
-.footer-info{font-size:12px;color:rgba(253,246,238,.3);text-align:right;line-height:1.9}
-.footer-info a{color:var(--terra)}
 
 @media(max-width:960px){
   nav{padding:0 20px}
@@ -148,24 +141,40 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
   .page-hero-content{padding:36px 22px}
   .ride-grid,.vid-trio,.photo-strip,.sched-head,.sched-row{grid-template-columns:1fr}
   .sched-head{display:none}
-  footer{padding:24px 20px}
 }
+/* ── FOOTER ── */
+footer{background:#1C0E06;padding:0}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding:52px 44px 40px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-logo-wrap{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.footer-mark-lg{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--terra),#C0391A);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.footer-name-lg{font-family:"Bebas Neue",sans-serif;font-size:20px;color:var(--cream);letter-spacing:.05em}
+.footer-name-lg span{color:var(--terra)}
+.footer-brand-tagline{font-size:13px;color:rgba(253,246,238,.4);line-height:1.7;max-width:220px;margin-top:4px}
+.footer-col-title{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(253,246,238,.35);margin-bottom:14px}
+.footer-col-links{list-style:none;display:flex;flex-direction:column;gap:9px}
+.footer-col-links a{font-size:13px;font-weight:600;color:rgba(253,246,238,.55);transition:.15s;text-decoration:none}
+.footer-col-links a:hover{color:var(--terra)}
+.footer-bottom{padding:18px 44px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-bottom-copy{font-size:12px;color:rgba(253,246,238,.25)}
+.footer-bottom-links{display:flex;gap:18px}
+.footer-bottom-links a{font-size:12px;font-weight:600;color:rgba(253,246,238,.3);transition:.15s;text-decoration:none}
+.footer-bottom-links a:hover{color:var(--terra)}
 </style>
 </head>
 <body>
 
 <div class="ticker">
   <div class="ticker-inner">
-    <span>🚴 Sunday Group Ride · 7AM · All Levels</span><em>·</em>
-    <span>🏃 Monday Run Club · 6:30AM</span><em>·</em>
-    <span>☕ Coffee at the finish · Every ride</span><em>·</em>
-    <span>📍 10548 S Western Ave Ste 2R · Chicago</span><em>·</em>
-    <span>📞 (224) 490-6981</span><em>·</em>
-    <span>🚴 Sunday Group Ride · 7AM · All Levels</span><em>·</em>
-    <span>🏃 Monday Run Club · 6:30AM</span><em>·</em>
-    <span>☕ Coffee at the finish · Every ride</span><em>·</em>
-    <span>📍 10548 S Western Ave Ste 2R · Chicago</span><em>·</em>
-    <span>📞 (224) 490-6981</span><em>·</em>
+    <span>Sunday Group Ride · 7AM · All Levels</span><em>·</em>
+    <span>Monday Run Club · 6:30AM</span><em>·</em>
+    <span>Coffee at the finish · Every ride</span><em>·</em>
+    <span>10548 S Western Ave Ste 2R · Chicago</span><em>·</em>
+    <span>(224) 490-6981</span><em>·</em>
+    <span>Sunday Group Ride · 7AM · All Levels</span><em>·</em>
+    <span>Monday Run Club · 6:30AM</span><em>·</em>
+    <span>Coffee at the finish · Every ride</span><em>·</em>
+    <span>10548 S Western Ave Ste 2R · Chicago</span><em>·</em>
+    <span>(224) 490-6981</span><em>·</em>
   </div>
 </div>
 
@@ -181,7 +190,7 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
     <a href="menu_final.html">Coffee</a>
   </div>
   <div class="nav-right">
-    <a href="tel:2244906981" class="nav-tel">📞 (224) 490-6981</a>
+    <a href="tel:2244906981" class="nav-tel">(224) 490-6981</a>
     <button class="btn-nav">Register Now</button>
   </div>
 </nav>
@@ -194,8 +203,8 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
     <h1>GROUP<br><span>RIDES</span></h1>
     <p>All levels welcome. Every ride ends with coffee.</p>
     <div style="display:flex;gap:12px;flex-wrap:wrap">
-      <button class="btn btn-terra btn-lg">🚴 Join Sunday Ride</button>
-      <button class="btn btn-ghost-light">📅 Full Schedule ↓</button>
+      <button class="btn btn-terra btn-lg">Join Sunday Ride</button>
+      <button class="btn btn-ghost-light">Full Schedule ↓</button>
     </div>
   </div>
 </div>
@@ -214,35 +223,35 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
     </div>
     <div class="sched-row">
       <div class="sched-day">SUN</div>
-      <div class="sched-name">☀️ Community Group Ride</div>
+      <div class="sched-name">Community Group Ride</div>
       <div class="sched-time">7:00 AM</div>
       <div class="sched-dist">25–35 mi</div>
       <div><span class="level lv-all">All Levels</span></div>
     </div>
     <div class="sched-row">
       <div class="sched-day">MON</div>
-      <div class="sched-name">🏃 Run Club</div>
+      <div class="sched-name">Run Club</div>
       <div class="sched-time">6:30 AM</div>
       <div class="sched-dist">3–6 mi</div>
       <div><span class="level lv-all">All Levels</span></div>
     </div>
     <div class="sched-row">
       <div class="sched-day">WED</div>
-      <div class="sched-name">🔥 Midweek Grind</div>
+      <div class="sched-name">Midweek Grind</div>
       <div class="sched-time">6:00 AM</div>
       <div class="sched-dist">18–22 mi</div>
       <div><span class="level lv-int">Intermediate</span></div>
     </div>
     <div class="sched-row">
       <div class="sched-day">THU</div>
-      <div class="sched-name">🏃 Speed Work</div>
+      <div class="sched-name">Speed Work</div>
       <div class="sched-time">6:00 AM</div>
       <div class="sched-dist">4–5 mi</div>
       <div><span class="level lv-int">Intermediate</span></div>
     </div>
     <div class="sched-row">
       <div class="sched-day">SAT</div>
-      <div class="sched-name">🌅 Dawn Patrol</div>
+      <div class="sched-name">Dawn Patrol</div>
       <div class="sched-time">5:30 AM</div>
       <div class="sched-dist">40–50 mi</div>
       <div><span class="level lv-adv">Advanced</span></div>
@@ -264,19 +273,19 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
         <iframe src="https://www.youtube.com/embed/ayzeJOA8Ovk?rel=0&modestbranding=1" title="Sunday Group Ride" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="ride-card-body">
-        <div class="ride-tag rt-terra">🚴 Cycling</div>
+        <div class="ride-tag rt-terra">Cycling</div>
         <div class="ride-name">Sunday Community Ride</div>
         <div class="ride-meta">
-          <div class="ride-meta-item">📅 Every Sunday</div>
-          <div class="ride-meta-item">🕖 7:00 AM</div>
-          <div class="ride-meta-item">📍 10548 S Western</div>
+          <div class="ride-meta-item">Every Sunday</div>
+          <div class="ride-meta-item">7:00 AM</div>
+          <div class="ride-meta-item">10548 S Western</div>
         </div>
         <div class="ride-stats">
           <div><div class="rs-val">30mi</div><div class="rs-label">Distance</div></div>
           <div><div class="rs-val">All</div><div class="rs-label">Level</div></div>
           <div><div class="rs-val">Free</div><div class="rs-label">Entry</div></div>
         </div>
-        <button class="btn btn-terra" style="width:100%;justify-content:center">Join This Ride ↗</button>
+        <button class="btn btn-terra" style="width:100%;justify-content:center">Join This Ride →</button>
       </div>
     </div>
     <div class="ride-card">
@@ -284,19 +293,19 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
         <iframe src="https://www.youtube.com/embed/U4jfhYa_7jY?rel=0&modestbranding=1" title="Dawn Patrol" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="ride-card-body">
-        <div class="ride-tag rt-sage">🌅 Cycling</div>
+        <div class="ride-tag rt-sage">Cycling</div>
         <div class="ride-name">Dawn Patrol — Saturday</div>
         <div class="ride-meta">
-          <div class="ride-meta-item">📅 Every Saturday</div>
-          <div class="ride-meta-item">🕔 5:30 AM</div>
-          <div class="ride-meta-item">📍 10548 S Western</div>
+          <div class="ride-meta-item">Every Saturday</div>
+          <div class="ride-meta-item">5:30 AM</div>
+          <div class="ride-meta-item">10548 S Western</div>
         </div>
         <div class="ride-stats">
           <div><div class="rs-val">45mi</div><div class="rs-label">Distance</div></div>
           <div><div class="rs-val">Adv</div><div class="rs-label">Level</div></div>
           <div><div class="rs-val">Free</div><div class="rs-label">Entry</div></div>
         </div>
-        <button class="btn btn-sage" style="width:100%;justify-content:center">Join This Ride ↗</button>
+        <button class="btn btn-sage" style="width:100%;justify-content:center">Join This Ride →</button>
       </div>
     </div>
   </div>
@@ -313,15 +322,15 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
   <div class="vid-trio">
     <div class="vid-mini">
       <iframe src="https://www.youtube.com/embed/i96m2W_Bm00?rel=0&modestbranding=1" title="Group Ride" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <div class="vid-mini-foot"><div class="vid-mini-title">🚴 Group Coffee Ride</div><div class="vid-mini-sub">Chicago South Side</div></div>
+      <div class="vid-mini-foot"><div class="vid-mini-title">Group Coffee Ride</div><div class="vid-mini-sub">Chicago South Side</div></div>
     </div>
     <div class="vid-mini">
       <iframe src="https://www.youtube.com/embed/TvxfEUZSd0Y?rel=0&modestbranding=1" title="Friends Riding" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <div class="vid-mini-foot"><div class="vid-mini-title">☀️ Riding with Friends</div><div class="vid-mini-sub">Community vibes</div></div>
+      <div class="vid-mini-foot"><div class="vid-mini-title">Riding with Friends</div><div class="vid-mini-sub">Community vibes</div></div>
     </div>
     <div class="vid-mini">
       <iframe src="https://www.youtube.com/embed/wLs-S-y0ReU?rel=0&modestbranding=1" title="Coffee After Ride" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <div class="vid-mini-foot"><div class="vid-mini-title">☕ Coffee After the Ride</div><div class="vid-mini-sub">The reward · The ritual</div></div>
+      <div class="vid-mini-foot"><div class="vid-mini-title">Coffee After the Ride</div><div class="vid-mini-sub">The reward · The ritual</div></div>
     </div>
   </div>
 
@@ -342,52 +351,52 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
     <div class="cta-h2">EVERY RIDE<br><span>ENDS WITH</span><br>COFFEE.</div>
     <div class="cta-sub">10548 S Western Ave Ste 2R · Chicago, IL</div>
     <div class="cta-btns">
-      <button class="btn btn-terra btn-lg" onclick="window.location='index.html'">🏠 Back to Home</button>
-      <button class="btn btn-ghost-light btn-lg" onclick="window.location='menu_final.html'">☕ Shop Coffee</button>
+      <button class="btn btn-terra btn-lg" onclick="window.location='index.html'">Back to Home</button>
+      <button class="btn btn-ghost-light btn-lg" onclick="window.location='menu_final.html'">Shop Coffee</button>
     </div>
   </div>
 </div>
 
 <footer>
   <div class="footer-top">
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <div class="footer-mark">☕</div>
-        <div class="footer-name">Group <span>Ride</span> Coffee LLC</div>
+    <div>
+      <div class="footer-logo-wrap">
+        <div class="footer-mark-lg">☕</div>
+        <div class="footer-name-lg">Group <span>Ride</span> Coffee LLC</div>
       </div>
-      <p>Camaraderie on the road and around the table. Cycling · Running · Coffee · Chicago South Side.</p>
+      <div class="footer-brand-tagline">Camaraderie on the road and around the table. Cycling · Running · Coffee · Chicago South Side.</div>
     </div>
     <div>
       <div class="footer-col-title">Navigate</div>
       <ul class="footer-col-links">
-        <li><a href="index.html">🏠 Home</a></li>
-        <li><a href="rides_final.html">🚴 Rides</a></li>
-        <li><a href="services_final.html">📦 Services</a></li>
-        <li><a href="menu_final.html">☕ Coffee Menu</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rides_final.html">Rides</a></li>
+        <li><a href="services_final.html">Services</a></li>
+        <li><a href="menu_final.html">Coffee Menu</a></li>
       </ul>
     </div>
     <div>
       <div class="footer-col-title">Policies</div>
       <ul class="footer-col-links">
-        <li><a href="terms.html">📋 Terms &amp; Conditions</a></li>
-        <li><a href="privacy.html">🔒 Privacy Policy</a></li>
-        <li><a href="refund.html">↩️ Refund Policy</a></li>
-        <li><a href="delivery.html">📦 Delivery &amp; Timeframes</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="refund.html">Refund Policy</a></li>
+        <li><a href="delivery.html">Delivery &amp; Timeframes</a></li>
       </ul>
     </div>
     <div>
       <div class="footer-col-title">Visit Us</div>
       <ul class="footer-col-links">
-        <li><a href="https://maps.google.com/?q=10548+S+Western+Ave+Chicago+IL">📍 10548 S Western Ave Ste 2R</a></li>
-        <li><a href="tel:2244906981">📞 (224) 490-6981</a></li>
-        <li><a href="#">🕖 Open · Closes 7 PM</a></li>
-        <li><a href="#">⭐ Leave a Google Review</a></li>
+        <li><a href="https://maps.google.com/?q=10548+S+Western+Ave+Chicago+IL">10548 S Western Ave Ste 2R</a></li>
+        <li><a href="tel:2244906981">(224) 490-6981</a></li>
+        <li><a href="#">Open Daily · Closes 7 PM</a></li>
+        <li><a href="#">Leave a Google Review</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-bottom-left">© 2025 Group Ride Coffee LLC · Chicago, IL · All rights reserved.</div>
-    <div class="footer-bottom-right">
+    <div class="footer-bottom-copy">© 2025 Group Ride Coffee LLC · Chicago, IL · All rights reserved.</div>
+    <div class="footer-bottom-links">
       <a href="terms.html">Terms</a>
       <a href="privacy.html">Privacy</a>
       <a href="refund.html">Refunds</a>

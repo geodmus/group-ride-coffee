@@ -125,13 +125,6 @@ nav{background:var(--white);border-bottom:1.5px solid var(--mist);height:68px;pa
 .cta-sub{font-size:16px;color:rgba(253,246,238,.45);margin-bottom:34px;font-weight:500;position:relative;z-index:1}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
 
-footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-.footer-logo{display:flex;align-items:center;gap:10px}
-.footer-mark{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--terra),#C0391A);display:flex;align-items:center;justify-content:center;font-size:14px}
-.footer-name{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--cream);letter-spacing:.05em}
-.footer-name span{color:var(--terra)}
-.footer-info{font-size:12px;color:rgba(253,246,238,.3);text-align:right;line-height:1.9}
-.footer-info a{color:var(--terra)}
 
 @media(max-width:960px){
   nav{padding:0 20px}
@@ -139,23 +132,39 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
   .sec{padding:48px 20px}
   .page-hero-content{padding:36px 22px}
   .menu-grid,.vid-pair,.drop-cta,.photo-strip{grid-template-columns:1fr}
-  footer{padding:24px 20px}
   .cta-band{padding:60px 22px}
 }
+/* ── FOOTER ── */
+footer{background:#1C0E06;padding:0}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding:52px 44px 40px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-logo-wrap{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.footer-mark-lg{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--terra),#C0391A);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.footer-name-lg{font-family:"Bebas Neue",sans-serif;font-size:20px;color:var(--cream);letter-spacing:.05em}
+.footer-name-lg span{color:var(--terra)}
+.footer-brand-tagline{font-size:13px;color:rgba(253,246,238,.4);line-height:1.7;max-width:220px;margin-top:4px}
+.footer-col-title{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(253,246,238,.35);margin-bottom:14px}
+.footer-col-links{list-style:none;display:flex;flex-direction:column;gap:9px}
+.footer-col-links a{font-size:13px;font-weight:600;color:rgba(253,246,238,.55);transition:.15s;text-decoration:none}
+.footer-col-links a:hover{color:var(--terra)}
+.footer-bottom{padding:18px 44px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-bottom-copy{font-size:12px;color:rgba(253,246,238,.25)}
+.footer-bottom-links{display:flex;gap:18px}
+.footer-bottom-links a{font-size:12px;font-weight:600;color:rgba(253,246,238,.3);transition:.15s;text-decoration:none}
+.footer-bottom-links a:hover{color:var(--terra)}
 </style>
 </head>
 <body>
 
 <div class="ticker">
   <div class="ticker-inner">
-    <span>☕ Friday Coffee Drop · 6AM Sharp · Limited Bags</span><em>·</em>
-    <span>🚴 Small-Batch Roasts · Brewed for Riders</span><em>·</em>
-    <span>📍 10548 S Western Ave Ste 2R · Chicago</span><em>·</em>
-    <span>📞 (224) 490-6981</span><em>·</em>
-    <span>☕ Friday Coffee Drop · 6AM Sharp · Limited Bags</span><em>·</em>
-    <span>🚴 Small-Batch Roasts · Brewed for Riders</span><em>·</em>
-    <span>📍 10548 S Western Ave Ste 2R · Chicago</span><em>·</em>
-    <span>📞 (224) 490-6981</span><em>·</em>
+    <span>Friday Coffee Drop · 6AM Sharp · Limited Bags</span><em>·</em>
+    <span>Small-Batch Roasts · Brewed for Riders</span><em>·</em>
+    <span>10548 S Western Ave Ste 2R · Chicago</span><em>·</em>
+    <span>(224) 490-6981</span><em>·</em>
+    <span>Friday Coffee Drop · 6AM Sharp · Limited Bags</span><em>·</em>
+    <span>Small-Batch Roasts · Brewed for Riders</span><em>·</em>
+    <span>10548 S Western Ave Ste 2R · Chicago</span><em>·</em>
+    <span>(224) 490-6981</span><em>·</em>
   </div>
 </div>
 
@@ -171,7 +180,7 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
     <a href="menu_final.html" class="active">Coffee</a>
   </div>
   <div class="nav-right">
-    <a href="tel:2244906981" class="nav-tel">📞 (224) 490-6981</a>
+    <a href="tel:2244906981" class="nav-tel">(224) 490-6981</a>
     <button class="btn-nav">Order Now</button>
   </div>
 </nav>
@@ -184,8 +193,8 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
     <h1>OUR<br><span>COFFEE</span></h1>
     <p>Small-batch roasts. Brewed for riders.</p>
     <div style="display:flex;gap:12px;flex-wrap:wrap">
-      <button class="btn btn-terra btn-lg">☕ Shop Drops</button>
-      <a href="tel:2244906981" class="btn btn-ghost-light">📞 (224) 490-6981</a>
+      <button class="btn btn-terra btn-lg">Shop Drops</button>
+      <a href="tel:2244906981" class="btn btn-ghost-light">(224) 490-6981</a>
     </div>
   </div>
 </div>
@@ -208,7 +217,7 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
     <div class="menu-card">
       <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=400&fit=crop&q=80" alt="5AM Roast"></div>
       <div class="menu-body">
-        <div class="menu-tag mt-terra">☕ Signature</div>
+        <div class="menu-tag mt-terra">Signature</div>
         <div class="menu-name">The 5AM Roast</div>
         <div class="menu-desc">Dark, smooth, built for the early start. Small-batch every Friday.</div>
         <div class="menu-price">$22 <span>/ 12oz bag</span></div>
@@ -217,7 +226,7 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
     <div class="menu-card">
       <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&h=400&fit=crop&q=80" alt="Cold Brew"></div>
       <div class="menu-body">
-        <div class="menu-tag mt-sage">🧊 Cold Brew</div>
+        <div class="menu-tag mt-sage">Cold Brew</div>
         <div class="menu-name">Club Cold Brew</div>
         <div class="menu-desc">24-hour steeped. Co-branded club edition. Ready to ride.</div>
         <div class="menu-price">$18 <span>/ 32oz bottle</span></div>
@@ -226,7 +235,7 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
     <div class="menu-card">
       <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&h=400&fit=crop&q=80" alt="Espresso"></div>
       <div class="menu-body">
-        <div class="menu-tag mt-espr">⚡ Espresso</div>
+        <div class="menu-tag mt-espr">Espresso</div>
         <div class="menu-name">Dark Threshold</div>
         <div class="menu-desc">Heavy body. Low acid. Pre-ride fuel for serious cyclists.</div>
         <div class="menu-price">$24 <span>/ 12oz bag</span></div>
@@ -235,7 +244,7 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
     <div class="menu-card">
       <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1490879483657-7fdb3f4ad7f3?w=500&h=400&fit=crop&q=80" alt="Ride Day"></div>
       <div class="menu-body">
-        <div class="menu-tag mt-sage">🌿 Blend</div>
+        <div class="menu-tag mt-sage">Blend</div>
         <div class="menu-name">Ride Day Blend</div>
         <div class="menu-desc">Smooth medium roast. All-day energy. For the long miles.</div>
         <div class="menu-price">$20 <span>/ 12oz bag</span></div>
@@ -244,7 +253,7 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
     <div class="menu-card">
       <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&h=400&fit=crop&q=80" alt="Subscription"></div>
       <div class="menu-body">
-        <div class="menu-tag mt-terra">📦 Subscription</div>
+        <div class="menu-tag mt-terra">Subscription</div>
         <div class="menu-name">Pro-Roast Monthly</div>
         <div class="menu-desc">Fresh roasts every month. Free shipping. Never run out.</div>
         <div class="menu-price">$65 <span>/ month</span></div>
@@ -253,7 +262,7 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
     <div class="menu-card">
       <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=500&h=400&fit=crop&q=80" alt="Bulk Club"></div>
       <div class="menu-body">
-        <div class="menu-tag mt-sage">🚴 Club Order</div>
+        <div class="menu-tag mt-sage">Club Order</div>
         <div class="menu-name">Bulk Club Bags</div>
         <div class="menu-desc">48 co-branded bags for your club. Post-ride community brews.</div>
         <div class="menu-price">$420 <span>/ 48-bag case</span></div>
@@ -273,11 +282,11 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
   <div class="vid-pair">
     <div class="vid-card">
       <iframe src="https://www.youtube.com/embed/xOICXYAIPQY?rel=0&modestbranding=1" title="Coffee After Ride" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <div class="vid-foot"><div class="vid-foot-title">☕ Coffee After the Ride · The Ritual</div><div class="vid-foot-sub">Small-batch · Every Friday 6AM</div></div>
+      <div class="vid-foot"><div class="vid-foot-title">Coffee After the Ride · The Ritual</div><div class="vid-foot-sub">Small-batch · Every Friday 6AM</div></div>
     </div>
     <div class="vid-card">
       <iframe src="https://www.youtube.com/embed/ol8FhAn1jRA?rel=0&modestbranding=1" title="Ride and Coffee" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <div class="vid-foot"><div class="vid-foot-title">🚴 Coffee Ride Community</div><div class="vid-foot-sub">Chicago South Side · Every Sunday</div></div>
+      <div class="vid-foot"><div class="vid-foot-title">Coffee Ride Community</div><div class="vid-foot-sub">Chicago South Side · Every Sunday</div></div>
     </div>
   </div>
 </div>
@@ -293,8 +302,8 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
       <div class="drop-name">The 5AM<br><span>Roast</span></div>
       <div class="drop-desc">Small-batch · 48 bags · Every Friday 6AM. Gone when they're gone.</div>
       <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <button class="btn btn-terra">🔔 Get Notified</button>
-        <button class="btn btn-ghost-light btn-sm">📦 Subscribe Monthly</button>
+        <button class="btn btn-terra">Get Notified</button>
+        <button class="btn btn-ghost-light btn-sm">Subscribe Monthly</button>
       </div>
     </div>
     <div class="drop-cta-img">
@@ -311,52 +320,52 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
     <div class="cta-h2">FUEL YOUR<br><span>RIDE.</span></div>
     <div class="cta-sub">Small-batch coffee · Brewed for the community</div>
     <div class="cta-btns">
-      <button class="btn btn-terra btn-lg" onclick="window.location='rides_final.html'">🚴 Join a Ride</button>
-      <button class="btn btn-ghost-light btn-lg" onclick="window.location='services_final.html'">📦 Club Packages</button>
+      <button class="btn btn-terra btn-lg" onclick="window.location='rides_final.html'">Join a Ride</button>
+      <button class="btn btn-ghost-light btn-lg" onclick="window.location='services_final.html'">Club Packages</button>
     </div>
   </div>
 </div>
 
 <footer>
   <div class="footer-top">
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <div class="footer-mark">☕</div>
-        <div class="footer-name">Group <span>Ride</span> Coffee LLC</div>
+    <div>
+      <div class="footer-logo-wrap">
+        <div class="footer-mark-lg">☕</div>
+        <div class="footer-name-lg">Group <span>Ride</span> Coffee LLC</div>
       </div>
-      <p>Camaraderie on the road and around the table. Cycling · Running · Coffee · Chicago South Side.</p>
+      <div class="footer-brand-tagline">Camaraderie on the road and around the table. Cycling · Running · Coffee · Chicago South Side.</div>
     </div>
     <div>
       <div class="footer-col-title">Navigate</div>
       <ul class="footer-col-links">
-        <li><a href="index.html">🏠 Home</a></li>
-        <li><a href="rides_final.html">🚴 Rides</a></li>
-        <li><a href="services_final.html">📦 Services</a></li>
-        <li><a href="menu_final.html">☕ Coffee Menu</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rides_final.html">Rides</a></li>
+        <li><a href="services_final.html">Services</a></li>
+        <li><a href="menu_final.html">Coffee Menu</a></li>
       </ul>
     </div>
     <div>
       <div class="footer-col-title">Policies</div>
       <ul class="footer-col-links">
-        <li><a href="terms.html">📋 Terms &amp; Conditions</a></li>
-        <li><a href="privacy.html">🔒 Privacy Policy</a></li>
-        <li><a href="refund.html">↩️ Refund Policy</a></li>
-        <li><a href="delivery.html">📦 Delivery &amp; Timeframes</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="refund.html">Refund Policy</a></li>
+        <li><a href="delivery.html">Delivery &amp; Timeframes</a></li>
       </ul>
     </div>
     <div>
       <div class="footer-col-title">Visit Us</div>
       <ul class="footer-col-links">
-        <li><a href="https://maps.google.com/?q=10548+S+Western+Ave+Chicago+IL">📍 10548 S Western Ave Ste 2R</a></li>
-        <li><a href="tel:2244906981">📞 (224) 490-6981</a></li>
-        <li><a href="#">🕖 Open · Closes 7 PM</a></li>
-        <li><a href="#">⭐ Leave a Google Review</a></li>
+        <li><a href="https://maps.google.com/?q=10548+S+Western+Ave+Chicago+IL">10548 S Western Ave Ste 2R</a></li>
+        <li><a href="tel:2244906981">(224) 490-6981</a></li>
+        <li><a href="#">Open Daily · Closes 7 PM</a></li>
+        <li><a href="#">Leave a Google Review</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-bottom-left">© 2025 Group Ride Coffee LLC · Chicago, IL · All rights reserved.</div>
-    <div class="footer-bottom-right">
+    <div class="footer-bottom-copy">© 2025 Group Ride Coffee LLC · Chicago, IL · All rights reserved.</div>
+    <div class="footer-bottom-links">
       <a href="terms.html">Terms</a>
       <a href="privacy.html">Privacy</a>
       <a href="refund.html">Refunds</a>
