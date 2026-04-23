@@ -74,14 +74,70 @@ nav{background:var(--white);border-bottom:1.5px solid var(--mist);height:68px;pa
 .policy-card-title{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.03em;color:var(--espr);margin-bottom:4px}
 .policy-card-sub{font-size:11px;color:var(--stone)}
 
-/* FOOTER */
-footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:0}
-.footer-logo{display:flex;align-items:center;gap:10px}
-.footer-mark{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--terra),#C0391A);display:flex;align-items:center;justify-content:center;font-size:14px}
-.footer-name{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--cream);letter-spacing:.05em}
-.footer-name span{color:var(--terra)}
-.footer-info{font-size:12px;color:rgba(253,246,238,.3);text-align:right;line-height:1.9}
-.footer-info a{color:var(--terra)}
+/* ── FOOTER FULL ── */
+footer { background:#1C0E06; padding:0; }
+.footer-top {
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:40px;
+  padding:52px 44px 40px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.footer-brand {}
+.footer-brand .footer-logo {
+  display:flex; align-items:center; gap:10px; margin-bottom:14px;
+}
+.footer-brand .footer-mark {
+  width:36px; height:36px; border-radius:50%;
+  background:linear-gradient(135deg,var(--terra),#C0391A);
+  display:flex; align-items:center; justify-content:center; font-size:16px;
+}
+.footer-brand .footer-name {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:20px; color:var(--cream); letter-spacing:.05em;
+}
+.footer-brand .footer-name span { color:var(--terra); }
+.footer-brand p {
+  font-size:13px; color:rgba(253,246,238,.4); line-height:1.7; max-width:220px;
+}
+.footer-col-title {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:14px; letter-spacing:.12em; text-transform:uppercase;
+  color:rgba(253,246,238,.35); margin-bottom:14px;
+}
+.footer-col-links { list-style:none; display:flex; flex-direction:column; gap:8px; }
+.footer-col-links a {
+  font-size:13px; font-weight:600; color:rgba(253,246,238,.55);
+  transition:.15s; display:flex; align-items:center; gap:7px;
+}
+.footer-col-links a:hover { color:var(--terra); }
+.footer-bottom {
+  padding:20px 44px;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:12px;
+}
+.footer-bottom-left {
+  font-size:12px; color:rgba(253,246,238,.25);
+}
+.footer-bottom-right {
+  display:flex; gap:16px; flex-wrap:wrap;
+}
+.footer-bottom-right a {
+  font-size:12px; color:rgba(253,246,238,.3);
+  font-weight:600; transition:.15s;
+}
+.footer-bottom-right a:hover { color:var(--terra); }
+@media(max-width:960px){
+  .footer-top {
+    grid-template-columns:1fr 1fr;
+    padding:36px 20px 28px;
+    gap:28px;
+  }
+  .footer-bottom { padding:16px 20px; }
+}
+@media(max-width:560px){
+  .footer-top { grid-template-columns:1fr; }
+}
 
 /* HAMBURGER */
 .hamburger{display:none;flex-direction:column;justify-content:space-around;width:32px;height:32px;background:transparent;border:none;cursor:pointer;padding:0}
@@ -252,13 +308,50 @@ footer{background:#1C0E06;padding:32px 44px;display:flex;align-items:center;just
 </div>
 
 <footer>
-  <a href="index.html" class="footer-logo">
-    <div class="footer-mark">☕</div>
-    <div class="footer-name">Group <span>Ride</span> Coffee LLC</div>
-  </a>
-  <div class="footer-info">
-    10548 S Western Ave Ste 2R · Chicago, IL 60643<br>
-    <a href="tel:2244906981">(224) 490-6981</a> · Open until 7 PM
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-mark">☕</div>
+        <div class="footer-name">Group <span>Ride</span> Coffee LLC</div>
+      </div>
+      <p>Camaraderie on the road and around the table. Cycling · Running · Coffee · Chicago South Side.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-col-links">
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="rides_final.html">🚴 Rides</a></li>
+        <li><a href="services_final.html">📦 Services</a></li>
+        <li><a href="menu_final.html">☕ Coffee Menu</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Policies</div>
+      <ul class="footer-col-links">
+        <li><a href="terms.html">📋 Terms &amp; Conditions</a></li>
+        <li><a href="privacy.html">🔒 Privacy Policy</a></li>
+        <li><a href="refund.html">↩️ Refund Policy</a></li>
+        <li><a href="delivery.html">📦 Delivery &amp; Timeframes</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Visit Us</div>
+      <ul class="footer-col-links">
+        <li><a href="https://maps.google.com/?q=10548+S+Western+Ave+Chicago+IL">📍 10548 S Western Ave Ste 2R</a></li>
+        <li><a href="tel:2244906981">📞 (224) 490-6981</a></li>
+        <li><a href="#">🕖 Open · Closes 7 PM</a></li>
+        <li><a href="#">⭐ Leave a Google Review</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">© 2025 Group Ride Coffee LLC · Chicago, IL · All rights reserved.</div>
+    <div class="footer-bottom-right">
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="refund.html">Refunds</a>
+      <a href="delivery.html">Delivery</a>
+    </div>
   </div>
 </footer>
 
